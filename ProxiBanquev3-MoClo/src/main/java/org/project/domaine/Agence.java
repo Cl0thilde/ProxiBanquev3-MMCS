@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 
 @XmlRootElement
-@Entity
+//@Entity
 
 public class Agence {
 

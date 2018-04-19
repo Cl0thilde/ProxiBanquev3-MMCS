@@ -44,6 +44,7 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 			txn.begin();
 			CompteCourant compteCourant = em.find(CompteCourant.class, element.getNumCompte());
 			compteCourant.setSolde(element.getSolde());
+			compteCourant.setDecouvertAutorise(element.getDecouvertAutorise());
 			em.merge(compteCourant);
 
 			txn.commit();
@@ -113,7 +114,7 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		List<CompteCourant> compteCourants = new ArrayList<>();
 		try {
 			txn.begin();
-			TypedQuery<CompteCourant> queryCompteCourant = em.createQuery("from Client", CompteCourant.class);
+			TypedQuery<CompteCourant> queryCompteCourant = em.createQuery("from CompteCourant", CompteCourant.class);
 			compteCourants = queryCompteCourant.getResultList();
 
 			txn.commit();

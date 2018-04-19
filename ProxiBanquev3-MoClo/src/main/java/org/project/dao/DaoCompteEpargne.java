@@ -48,6 +48,7 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 			txn.begin();
 			CompteEpargne compteEpargne = em.find(CompteEpargne.class, element.getNumCompte());
 			compteEpargne.setSolde(element.getSolde());
+			compteEpargne.setTauxRemuneration(element.getTauxRemuneration());
 			em.merge(compteEpargne);
 
 			txn.commit();
@@ -119,7 +120,7 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 		List<CompteEpargne> compteEpargnes = new ArrayList<>();
 		try {
 			txn.begin();
-			TypedQuery<CompteEpargne> queryCompteEpargne = em.createQuery("from Client", CompteEpargne.class);
+			TypedQuery<CompteEpargne> queryCompteEpargne = em.createQuery("from CompteEpargne", CompteEpargne.class);
 			compteEpargnes = queryCompteEpargne.getResultList();
 
 			txn.commit();
