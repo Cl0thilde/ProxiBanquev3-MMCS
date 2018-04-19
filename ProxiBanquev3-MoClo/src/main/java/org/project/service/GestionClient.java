@@ -8,6 +8,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import org.project.domaine.Client;
@@ -15,6 +16,7 @@ import org.project.domaine.Compte;
 import org.project.domaine.CompteCourant;
 import org.project.domaine.CompteEpargne;
 
+@Produces({ "application/xml", "application/json" })
 public interface GestionClient {
 
 	// Méthodes de gestion des clients

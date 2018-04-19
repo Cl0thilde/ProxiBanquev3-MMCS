@@ -7,15 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
 public class Agence {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String idAgence;
-	
-	@OneToMany(mappedBy="idConseiller")
+
+	@OneToMany(mappedBy = "idConseiller")
 	private List<Conseiller> conseillers;
 
 	public Agence(String idAgence, List<Conseiller> conseillers) {
