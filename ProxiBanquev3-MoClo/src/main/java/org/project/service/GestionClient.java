@@ -43,7 +43,7 @@ public interface GestionClient {
 	// Méthodes de gestion des comptes courants
 	@Path("/clients/{idclient}/comptes/comptes_courants/")
 	@POST
-	public Response createCompteCourant(CompteCourant compteC);
+	public Response createCompteCourant(CompteCourant compteC,@PathParam("idclient") String idClient);
 
 	@Path("/clients/{idclient}/comptes/comptes_courants/")
 	@PUT
@@ -64,7 +64,7 @@ public interface GestionClient {
 	// Méthodes de gestion des comptes epargnes
 	@Path("/clients/{idclient}/comptes/comptes_epargnes/")
 	@POST
-	public Response createCompteEpargne(CompteEpargne compteE);
+	public Response createCompteEpargne(CompteEpargne compteE,@PathParam("idclient") String idClient);
 
 	@Path("/clients/{idclient}/comptes/comptes_epargnes/")
 	@PUT

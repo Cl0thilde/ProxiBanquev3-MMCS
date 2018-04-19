@@ -21,7 +21,7 @@ public class Test1 {
 		Client c = new Client("nom", "prenom", adresse, "telephone", "email");
 		CompteCourant cc = new CompteCourant(0.1, "carteVisa");
 //		cc.setClient(c);
-		c.addCompteCourant(cc);
+//		c.addCompteCourant(cc);
 		daoClient.create(c);
 		//// c.setConseiller(co);
 		// dao.create(c);

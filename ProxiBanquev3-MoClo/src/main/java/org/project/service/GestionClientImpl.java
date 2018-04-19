@@ -3,6 +3,7 @@ package org.project.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
 import org.project.dao.DaoClient;
@@ -64,7 +65,10 @@ public class GestionClientImpl implements GestionClient {
 	}
 
 	@Override
-	public Response createCompteCourant(CompteCourant compteC) {
+	public Response createCompteCourant(CompteCourant compteC, String idClient) {
+		int id = Integer.parseInt(idClient);
+		Client client = daoClient.readById(id);
+		compteC.setClient(client);
 		daoCompteCourant.create(compteC);
 		return Response.ok(compteC).build();
 	}
@@ -108,7 +112,10 @@ public class GestionClientImpl implements GestionClient {
 	}
 
 	@Override
-	public Response createCompteEpargne(CompteEpargne compteE) {
+	public Response createCompteEpargne(CompteEpargne compteE, String idClient) {
+		int id = Integer.parseInt(idClient);
+		Client client = daoClient.readById(id);
+		compteE.setClient(client);
 		daoCompteEpargne.create(compteE);
 		return Response.ok(compteE).build();
 	}

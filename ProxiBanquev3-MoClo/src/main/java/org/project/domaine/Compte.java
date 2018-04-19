@@ -22,10 +22,10 @@ public abstract class Compte {
 
 	private double solde;
 
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	@JoinColumn(name = "idClient")
-
-	private Client client;
+	 @OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	 @JoinColumn(name = "idClient")
+	
+	 private Client client;
 
 	private Date dateOuverture;
 
@@ -60,13 +60,13 @@ public abstract class Compte {
 	public void setDateOuverture(Date dateOuverture) {
 		this.dateOuverture = dateOuverture;
 	}
-
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
+	
+	 public Client getClient() {
+	 return client;
+	 }
+	
+	 public void setClient(Client client) {
+	 this.client = client;
+	 }
 
 }

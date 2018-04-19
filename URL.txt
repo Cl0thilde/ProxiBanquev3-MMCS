@@ -37,9 +37,70 @@ URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1
 
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients
+---------------------------------------------------------------------------------------------
+Method : GET
+http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/
+---------------------------------------------------------------------------------------------
+
+Method : GET
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/
+
+Method : GET
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_epargnes/
+   
 
 
 
 
+   {
+        "numCompte": 1,
+        "solde": 0,
+        "client": {
+            "idClient": 1,
+            "nom": "Doe",
+            "prenom": "John",
+            "adresse": {
+                "rue": "rue inconnue",
+                "codePostal": 75000,
+                "ville": "Paris"
+            },
+            "telephone": "1234567890",
+            "email": "email"
+        },
+        "dateOuverture": null,
+        "decouvertAutorise": 0.1,
+        "carteVisa": "carteVisa"
+    }
 
+	
+	    {
+        "numCompte": 2,
+        "solde": 267,
+        "client": {
+            "idClient": 1,
+            "nom": "Doe",
+            "prenom": "John",
+            "adresse": {
+                "rue": "rue inconnue",
+                "codePostal": 75000,
+                "ville": "Paris"
+            },
+            "telephone": "1234567890",
+            "email": "email"
+        },
+        "dateOuverture": 1524088800000,
+        "tauxRemuneration": 3.2
+    }
+	
+	
+Creation comptes
+    {
+        "solde": 200,
+        "client": {
+            "idClient": 2
+        },
+        "dateOuverture": null,
+        "decouvertAutorise": 0.1,
+        "carteVisa": "carteVisa"
+    }
 

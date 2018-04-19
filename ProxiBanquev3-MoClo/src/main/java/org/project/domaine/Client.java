@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -30,13 +31,17 @@ public class Client {
 	// @JoinColumn(name = "idConseiller", unique = true)
 	// private Conseiller conseiller;
 
-	@OneToOne(mappedBy = "client",cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	private CompteCourant compteCourant;
-	
-	@OneToOne (mappedBy = "client", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}) 
-	private CompteEpargne compteEpargne;
+	// @OneToOne(mappedBy = "client", cascade = { CascadeType.PERSIST,
+	// CascadeType.REMOVE })
+	// @OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	// @JoinColumn(name = "numCompte")
+	// private CompteCourant compteCourant;
 
-
+	// @OneToOne(mappedBy = "client", cascade = { CascadeType.PERSIST,
+	// CascadeType.REMOVE })
+	// @OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	// @JoinColumn(name = "numCompte")
+	// private CompteEpargne compteEpargne;
 
 	//
 	// public Client(int idClient, Adresse adresse, String telephone, String email,
@@ -121,32 +126,31 @@ public class Client {
 		this.prenom = prenom;
 	}
 
+	// public CompteCourant getCompteCourant() {
+	// return compteCourant;
+	// }
+	//
+	// public void setCompteCourant(CompteCourant compteCourant) {
+	// this.compteCourant = compteCourant;
+	// }
+	//
+	// public CompteEpargne getCompteEpargne() {
+	// return compteEpargne;
+	// }
+	//
+	// public void setCompteEpargne(CompteEpargne compteEpargne) {
+	// this.compteEpargne = compteEpargne;
+	// }
 
-	 public CompteCourant getCompteCourant() {
-	 return compteCourant;
-	 }
-	
-	 public void setCompteCourant(CompteCourant compteCourant) {
-	 this.compteCourant = compteCourant;
-	 }
-	
-	 public CompteEpargne getCompteEpargne() {
-	 return compteEpargne;
-	 }
-	
-	 public void setCompteEpargne(CompteEpargne compteEpargne) {
-	 this.compteEpargne = compteEpargne;
-	 }
-
-	 public void addCompteCourant(CompteCourant compteCourant) {
-		 compteCourant.setClient(this);
-		 this.setCompteCourant(compteCourant);
-		 
-	 }
-	
-	 public void addCompteEpargne(CompteEpargne compteEpargne) {
-		 compteEpargne.setClient(this);
-		 this.setCompteEpargne(compteEpargne);
-	 }
+	// public void addCompteCourant(CompteCourant compteCourant) {
+	// compteCourant.setClient(this);
+	// this.setCompteCourant(compteCourant);
+	//
+	// }
+	//
+	// public void addCompteEpargne(CompteEpargne compteEpargne) {
+	// compteEpargne.setClient(this);
+	// this.setCompteEpargne(compteEpargne);
+	// }
 
 }
