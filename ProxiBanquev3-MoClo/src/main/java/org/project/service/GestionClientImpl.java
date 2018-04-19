@@ -25,20 +25,29 @@ public class GestionClientImpl implements GestionClient {
 
 	@Override
 	public Response updateClient(Client updatedClient) {
-		Client client = daoClient.readById(updatedClient.getIdClient());
 		Response response = null;
-		if(client!=null) {
-			response = Response.ok().build();
-}else {
-	response = Response.notModified().build();
-}
-		return null;
+		Client client = daoClient.readById(updatedClient.getIdClient());
+		if (client != null) {
+			daoClient.update(client);
+			response = Response.ok("Client modifié").build();
+		} else {
+			response = Response.notModified().build();
+		}
+		return response;
 	}
 
 	@Override
 	public Response deleteClient(String idClient) {
-		// TODO Auto-generated method stub
-		return null;
+		Response response = null;
+		int id = Integer.parseInt(idClient);
+		Client client = daoClient.readById(id);
+		if (client != null) {
+			daoClient.delete(client);
+			response = Response.ok("Client supprimé").build();
+		} else {
+			response = Response.notModified().build();
+		}
+		return response;
 	}
 
 	@Override
@@ -49,68 +58,95 @@ public class GestionClientImpl implements GestionClient {
 
 	@Override
 	public List<Client> readAllClient() {
-		// TODO Auto-generated method stub
-		return null;
+		return daoClient.readAll();
 	}
 
 	@Override
 	public Response createCompteCourant(CompteCourant compteC) {
-		// TODO Auto-generated method stub
-		return null;
+		daoCompteCourant.create(compteC);
+		return Response.ok(compteC).build();
 	}
 
 	@Override
-	public Response updateCompteCourant(CompteCourant compteC) {
-		// TODO Auto-generated method stub
-		return null;
+	public Response updateCompteCourant(CompteCourant updatedCompteC) {
+		Response response = null;
+		CompteCourant compteCourant = daoCompteCourant.readById(updatedCompteC.getNumCompte());
+		if (compteCourant != null) {
+			daoCompteCourant.update(compteCourant);
+			response = Response.ok("Compte courant modifié").build();
+		} else {
+			response = Response.notModified().build();
+		}
+		return response;
 	}
 
 	@Override
 	public Response deleteCompteCourant(String numCompte) {
-		// TODO Auto-generated method stub
-		return null;
+		Response response = null;
+		int id = Integer.parseInt(numCompte);
+		CompteCourant compteCourant = daoCompteCourant.readById(id);
+		if (compteCourant != null) {
+			daoCompteCourant.delete(compteCourant);
+			response = Response.ok("Compte courant supprimé").build();
+		} else {
+			response = Response.notModified().build();
+		}
+		return response;
 	}
 
 	@Override
 	public CompteCourant readCompteCourantByNum(String numCompte) {
-		// TODO Auto-generated method stub
-		return null;
+		int id = Integer.parseInt(numCompte);
+		return daoCompteCourant.readById(id);
 	}
 
 	@Override
 	public List<CompteCourant> readAllCompteCourant() {
-		// TODO Auto-generated method stub
-		return null;
+		return daoCompteCourant.readAll();
 	}
 
 	@Override
 	public Response createCompteEpargne(CompteEpargne compteE) {
-		// TODO Auto-generated method stub
-		return null;
+		daoCompteEpargne.create(compteE);
+		return Response.ok(compteE).build();
 	}
 
 	@Override
-	public Response updateCompteEpargne(CompteEpargne compteE) {
-		// TODO Auto-generated method stub
-		return null;
+	public Response updateCompteEpargne(CompteEpargne updatedCompteE) {
+		Response response = null;
+		CompteEpargne compteEpargne = daoCompteEpargne.readById(updatedCompteE.getNumCompte());
+		if (compteEpargne != null) {
+			daoCompteEpargne.update(compteEpargne);
+			response = Response.ok("Compte épargne modifié").build();
+		} else {
+			response = Response.notModified().build();
+		}
+		return response;
 	}
 
 	@Override
 	public Response deleteCompteEpargne(String numCompte) {
-		// TODO Auto-generated method stub
-		return null;
+		Response response = null;
+		int id = Integer.parseInt(numCompte);
+		CompteEpargne compteCourant = daoCompteEpargne.readById(id);
+		if (compteCourant != null) {
+			daoCompteEpargne.delete(compteCourant);
+			response = Response.ok("Compte épargne supprimé").build();
+		} else {
+			response = Response.notModified().build();
+		}
+		return response;
 	}
 
 	@Override
 	public CompteEpargne readCompteEpargneByNum(String numCompte) {
-		// TODO Auto-generated method stub
-		return null;
+		int id = Integer.parseInt(numCompte);
+		return daoCompteEpargne.readById(id);
 	}
 
 	@Override
 	public List<CompteEpargne> readAllCompteEpargne() {
-		// TODO Auto-generated method stub
-		return null;
+		return daoCompteEpargne.readAll();
 	}
 
 }
