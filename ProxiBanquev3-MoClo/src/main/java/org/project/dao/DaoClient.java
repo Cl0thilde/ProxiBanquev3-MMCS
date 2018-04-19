@@ -21,6 +21,7 @@ public class DaoClient implements IDao<Client> {
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
+			
 			em.persist(element);
 
 			txn.commit();

@@ -26,6 +26,7 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 			DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
 			shortDateFormat.format(dateOuverture);
 			element.setDateOuverture(dateOuverture);
+			
 			em.persist(element);
 
 			txn.commit();
