@@ -8,12 +8,15 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import org.project.domaine.Client;
+import org.project.domaine.Conseiller;
+import org.project.domaine.Conseiller;
+import org.project.domaine.Conseiller;
 import org.project.util.JPAUtil;
 
-public class DaoClient implements IDao<Client> {
+public class DaoConseiller implements IDao<Conseiller>{
 
 	@Override
-	public void create(Client element) {
+	public void create(Conseiller element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -35,40 +38,19 @@ public class DaoClient implements IDao<Client> {
 	}
 
 	@Override
-	public void update(Client element) {
+	public void update(Conseiller element) {
 		// TODO Auto-generated method stub
-		EntityManager em = JPAUtil.EMF.createEntityManager();
-		EntityTransaction txn = em.getTransaction();
-		try {
-			txn.begin();
-//			Client client = em.find(Client.class, element.getIdClient());
-//			client.setAdresse(element.getAdresse());
-//			client.setNom(element.getNom());
-//			client.setPrenom(element.getPrenom());
-//			client.setEmail(element.getEmail());
-			em.merge(element);
-
-			txn.commit();
-		} catch (Exception e) {
-			if (txn != null)
-				txn.rollback();
-
-		} finally {
-			if (em != null)
-				em.close();
-
-		}
-	
+		
 	}
 
 	@Override
-	public void delete(Client element) {
+	public void delete(Conseiller element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
 
-			element = em.find(Client.class, element.getIdClient());
+			element = em.find(Conseiller.class, element.getIdConseiller());
 			em.remove(element);
 
 			txn.commit();
@@ -85,14 +67,14 @@ public class DaoClient implements IDao<Client> {
 	}
 
 	@Override
-	public Client readById(int id) {
+	public Conseiller readById(int id) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
-		Client client = null;
+		Conseiller conseiller = null;
 		try {
 			txn.begin();
 
-			client = em.find(Client.class, id);
+			conseiller = em.find(Conseiller.class, id);
 
 			txn.commit();
 		} catch (Exception e) {
@@ -105,17 +87,18 @@ public class DaoClient implements IDao<Client> {
 
 		}
 		
-		return client;
+		return conseiller;
 	}
 
 	@Override
-	public List<Client> readAll() {EntityManager em = JPAUtil.EMF.createEntityManager();
+	public List<Conseiller> readAll() {
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
-		List<Client> clients = new ArrayList<>();
+		List<Conseiller> conseillers = new ArrayList<>();
 		try {
 			txn.begin();
-			TypedQuery<Client> queryClients = em.createQuery("from Client", Client.class);
-			clients = queryClients.getResultList();
+			TypedQuery<Conseiller> queryConseiller = em.createQuery("from Conseiller", Conseiller.class);
+			conseillers = queryConseiller.getResultList();
 
 			txn.commit();
 		} catch (Exception e) {
@@ -128,9 +111,8 @@ public class DaoClient implements IDao<Client> {
 
 		}
 		
-		return clients;
+		return conseillers;
 
 	}
-		
+	}
 
-}
