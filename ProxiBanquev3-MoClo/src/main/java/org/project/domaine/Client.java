@@ -27,10 +27,10 @@ public class Client {
 	private Adresse adresse;
 	private String telephone;
 	private String email;
-
-	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	@JoinColumn(name = "idConseiller", unique = true)
-	private Conseiller conseiller;
+//
+//	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+//	@JoinColumn(name = "idConseiller", unique = true)
+//	private Conseiller conseiller;
 
 	//// @OneToOne(mappedBy = "numCompte")
 	// private CompteCourant compteCourant;
@@ -54,6 +54,19 @@ public class Client {
 	public Client() {
 
 	}
+
+	
+	
+	public Client(String nom, String prenom, Adresse adresse, String telephone, String email) {
+	super();
+	this.nom = nom;
+	this.prenom = prenom;
+	this.adresse = adresse;
+	this.telephone = telephone;
+	this.email = email;
+}
+
+
 
 	public int getIdClient() {
 		return idClient;
@@ -87,13 +100,13 @@ public class Client {
 		this.email = email;
 	}
 
-	public Conseiller getConseiller() {
-		return conseiller;
-	}
-
-	public void setConseiller(Conseiller conseiller) {
-		this.conseiller = conseiller;
-	}
+//	public Conseiller getConseiller() {
+//		return conseiller;
+//	}
+//
+//	public void setConseiller(Conseiller conseiller) {
+//		this.conseiller = conseiller;
+//	}
 
 	public String getNom() {
 		return nom;

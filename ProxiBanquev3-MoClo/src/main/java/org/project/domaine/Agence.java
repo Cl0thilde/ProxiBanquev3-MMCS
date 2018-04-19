@@ -8,14 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
+//@Entity
 public class Agence {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@Id
 	private String idAgence;
 	
-	@OneToMany(mappedBy="idConseiller")
+//	@OneToMany(mappedBy="idConseiller")
 	private List<Conseiller> conseillers;
 
 	public Agence(String idAgence, List<Conseiller> conseillers) {

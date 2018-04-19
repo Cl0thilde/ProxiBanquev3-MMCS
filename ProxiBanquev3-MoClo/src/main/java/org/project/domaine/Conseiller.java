@@ -11,11 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-@Entity
+//@Entity
 public class Conseiller {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idConseiller;
 
 	private String nom;
@@ -24,12 +24,12 @@ public class Conseiller {
 	private String password;
 	private String login;
 
-	@OneToMany(mappedBy = "idClient")
+//	@OneToMany(mappedBy = "idClient")
 	private List<Client> clients;
 
-	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	@JoinColumn(name = "idAgence", unique = true)
-	private Agence agence;
+//	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+//	@JoinColumn(name = "idAgence", unique = true)
+//	private Agence agence;
 
 	public Conseiller(int idConseiller, List<Client> clients) {
 		this.idConseiller = idConseiller;
@@ -70,14 +70,14 @@ public class Conseiller {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
-	public Agence getAgence() {
-		return agence;
-	}
-
-	public void setAgence(Agence agence) {
-		this.agence = agence;
-	}
+//
+//	public Agence getAgence() {
+//		return agence;
+//	}
+//
+//	public void setAgence(Agence agence) {
+//		this.agence = agence;
+//	}
 
 	public String getPassword() {
 		return password;
