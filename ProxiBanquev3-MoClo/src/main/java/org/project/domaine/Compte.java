@@ -1,13 +1,25 @@
 package org.project.domaine;
 
-public abstract class Compte {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class Compte {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int numCompte;
+	
 	private double solde;
+	
 	private String dateOuverture;
 
-	public Compte(int numCompte, double solde, String dateOuverture) {
-		this.numCompte = numCompte;
+	public Compte(double solde, String dateOuverture) {
 		this.solde = solde;
 		this.dateOuverture = dateOuverture;
 	}

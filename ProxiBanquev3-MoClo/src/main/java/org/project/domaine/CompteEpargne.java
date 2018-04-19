@@ -1,5 +1,8 @@
 package org.project.domaine;
 
+import javax.persistence.Entity;
+
+@Entity
 public class CompteEpargne extends Compte {
 
 	private double tauxRemuneration;

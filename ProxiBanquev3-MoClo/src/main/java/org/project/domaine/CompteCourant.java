@@ -1,5 +1,8 @@
 package org.project.domaine;
 
+import javax.persistence.Entity;
+
+@Entity
 public class CompteCourant extends Compte {
 
 	private double decouvertAutorise;

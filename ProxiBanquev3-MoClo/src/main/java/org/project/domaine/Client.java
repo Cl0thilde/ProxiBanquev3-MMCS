@@ -2,22 +2,54 @@ package org.project.domaine;
 
 import java.util.List;
 
-public class Client extends Personne {
+import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
+@Entity
+public class Client {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idClient;
+
+	private String nom;
+
+	private String prenom;
+
+	@Embedded
 	private Adresse adresse;
 	private String telephone;
 	private String email;
-	private List<Compte> comptes;
 
-	public Client(int idClient, Adresse adresse, String telephone, String email, List<Compte> comptes) {
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@JoinColumn(name = "idConseiller", unique = true)
+	private Conseiller conseiller;
 
-		this.idClient = idClient;
-		this.adresse = adresse;
-		this.telephone = telephone;
-		this.email = email;
-		this.comptes = comptes;
-	}
+	//// @OneToOne(mappedBy = "numCompte")
+	// private CompteCourant compteCourant;
+	//
+	//// @OneToOne(mappedBy = "numCompte")
+	// private CompteEpargne compteEpargne;
+	//
+	// public Client(int idClient, Adresse adresse, String telephone, String email,
+	//// Conseiller conseiller,
+	// CompteCourant compteCourant, CompteEpargne compteEpargne) {
+	// super();
+	// this.idClient = idClient;
+	// this.adresse = adresse;
+	// this.telephone = telephone;
+	// this.email = email;
+	// this.conseiller = conseiller;
+	// this.compteCourant = compteCourant;
+	// this.compteEpargne = compteEpargne;
+	// }
 
 	public Client() {
 
@@ -55,12 +87,45 @@ public class Client extends Personne {
 		this.email = email;
 	}
 
-	public List<Compte> getComptes() {
-		return comptes;
+	public Conseiller getConseiller() {
+		return conseiller;
 	}
 
-	public void setComptes(List<Compte> comptes) {
-		this.comptes = comptes;
+	public void setConseiller(Conseiller conseiller) {
+		this.conseiller = conseiller;
 	}
 
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	// public CompteCourant getCompteCourant() {
+	// return compteCourant;
+	// }
+	//
+	// public void setCompteCourant(CompteCourant compteCourant) {
+	// this.compteCourant = compteCourant;
+	// }
+	//
+	// public CompteEpargne getCompteEpargne() {
+	// return compteEpargne;
+	// }
+	//
+	// public void setCompteEpargne(CompteEpargne compteEpargne) {
+	// this.compteEpargne = compteEpargne;
+	// }
+
+	
 }

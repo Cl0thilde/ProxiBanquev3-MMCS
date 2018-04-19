@@ -1,15 +1,18 @@
 package org.project.domaine;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Adresse {
 
 	private String rue;
 	private int codePostal;
-	private String dateOuverture;
+	private String ville;
 
-	public Adresse(String rue, int codePostal, String dateOuverture) {
+	public Adresse(String rue, int codePostal, String ville) {
 		this.rue = rue;
 		this.codePostal = codePostal;
-		this.dateOuverture = dateOuverture;
+		this.ville = ville;
 	}
 
 	public Adresse() {
@@ -31,12 +34,13 @@ public class Adresse {
 		this.codePostal = codePostal;
 	}
 
-	public String getDateOuverture() {
-		return dateOuverture;
+	public String getVille() {
+		return ville;
 	}
 
-	public void setDateOuverture(String dateOuverture) {
-		this.dateOuverture = dateOuverture;
+	public void setVille(String ville) {
+		this.ville = ville;
 	}
+
 
 }
