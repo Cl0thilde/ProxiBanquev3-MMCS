@@ -1,5 +1,6 @@
 package org.project.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.core.Response;
@@ -9,6 +10,7 @@ import org.project.dao.DaoCompteCourant;
 import org.project.dao.DaoCompteEpargne;
 import org.project.dao.IDao;
 import org.project.domaine.Client;
+import org.project.domaine.Compte;
 import org.project.domaine.CompteCourant;
 import org.project.domaine.CompteEpargne;
 
@@ -147,6 +149,16 @@ public class GestionClientImpl implements GestionClient {
 	@Override
 	public List<CompteEpargne> readAllCompteEpargne() {
 		return daoCompteEpargne.readAll();
+	}
+
+	@Override
+	public List<Compte> readAllCompte() {
+		List<Compte> comptes = new ArrayList<>();
+		List<CompteCourant> comptesCourant = daoCompteCourant.readAll();
+		List<CompteEpargne> comptesEpargne = daoCompteEpargne.readAll();
+		comptes.addAll(comptesCourant);
+		comptes.addAll(comptesEpargne);
+		return comptes;
 	}
 
 }
