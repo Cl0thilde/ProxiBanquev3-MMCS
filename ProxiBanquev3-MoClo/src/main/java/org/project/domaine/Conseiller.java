@@ -39,6 +39,14 @@ public class Conseiller {
 		this.clients = clients;
 	}
 
+	public Conseiller(String nom, String prenom, String password, String login) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.password = password;
+		this.login = login;
+	}
+
 	public Conseiller() {
 	}
 
