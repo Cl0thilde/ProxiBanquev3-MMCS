@@ -1,6 +1,8 @@
 package org.project.dao;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,10 +11,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import org.project.domaine.CompteEpargne;
-import org.project.domaine.CompteEpargne;
-import org.project.domaine.CompteEpargne;
-import org.project.domaine.CompteEpargne;
 import org.project.domaine.CompteEpargne;
 
 public class DaoCompteEpargne implements IDao<CompteEpargne> {
@@ -24,6 +22,10 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
+			Date dateOuverture = new Date();
+			DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
+			shortDateFormat.format(dateOuverture);
+			element.setDateOuverture(dateOuverture);
 			em.persist(element);
 
 			txn.commit();

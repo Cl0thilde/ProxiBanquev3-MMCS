@@ -1,6 +1,8 @@
 package org.project.dao;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -20,6 +22,10 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
+			Date dateOuverture = new Date();
+			DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
+			shortDateFormat.format(dateOuverture);
+			element.setDateOuverture(dateOuverture);
 			em.persist(element);
 
 			txn.commit();

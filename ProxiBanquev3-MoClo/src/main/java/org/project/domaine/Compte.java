@@ -1,5 +1,7 @@
 package org.project.domaine;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,18 +10,18 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Compte {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int numCompte;
-	
-	private double solde;
-	
-	private String dateOuverture;
 
-	public Compte(double solde, String dateOuverture) {
+	private double solde;
+
+	private Date dateOuverture;
+
+	public Compte(double solde, Date dateOuverture) {
 		this.solde = solde;
 		this.dateOuverture = dateOuverture;
 	}
@@ -43,11 +45,11 @@ public abstract class Compte {
 		this.solde = solde;
 	}
 
-	public String getDateOuverture() {
+	public Date getDateOuverture() {
 		return dateOuverture;
 	}
 
-	public void setDateOuverture(String dateOuverture) {
+	public void setDateOuverture(Date dateOuverture) {
 		this.dateOuverture = dateOuverture;
 	}
 
