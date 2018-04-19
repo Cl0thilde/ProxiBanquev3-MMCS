@@ -1,10 +1,6 @@
 package org.project.domaine;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -13,8 +9,7 @@ public class CompteCourant extends Compte {
 
 	private double decouvertAutorise;
 	private String carteVisa;
-	
-	
+
 	public CompteCourant() {
 	}
 
@@ -38,7 +33,5 @@ public class CompteCourant extends Compte {
 	public void setCarteVisa(String carteVisa) {
 		this.carteVisa = carteVisa;
 	}
-
-
 
 }

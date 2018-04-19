@@ -4,20 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import org.project.domaine.Client;
+import org.project.util.JPAUtil;
 
 public class DaoClient implements IDao<Client> {
 
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");
-
 	@Override
 	public void create(Client element) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
@@ -34,22 +31,22 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		emf.close();
+		
 	}
 
 	@Override
 	public void update(Client element) {
 		// TODO Auto-generated method stub
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
-			Client client = em.find(Client.class, element.getIdClient());
-			client.setAdresse(element.getAdresse());
-			client.setNom(element.getNom());
-			client.setPrenom(element.getPrenom());
-			client.setEmail(element.getEmail());
-			em.merge(client);
+//			Client client = em.find(Client.class, element.getIdClient());
+//			client.setAdresse(element.getAdresse());
+//			client.setNom(element.getNom());
+//			client.setPrenom(element.getPrenom());
+//			client.setEmail(element.getEmail());
+			em.merge(element);
 
 			txn.commit();
 		} catch (Exception e) {
@@ -61,12 +58,12 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		emf.close();
+	
 	}
 
 	@Override
 	public void delete(Client element) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
@@ -84,12 +81,12 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		emf.close();
+		
 	}
 
 	@Override
 	public Client readById(int id) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		Client client = null;
 		try {
@@ -107,13 +104,13 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		emf.close();
+		
 		return client;
 	}
 
 	@Override
 	public List<Client> readAll() {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		List<Client> clients = new ArrayList<>();
 		try {
@@ -131,7 +128,7 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		emf.close();
+		
 		return clients;
 
 	}

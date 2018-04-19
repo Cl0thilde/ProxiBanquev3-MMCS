@@ -1,0 +1,45 @@
+Method : POST
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/
+Flux :
+{
+      "nom": "Doe",
+    "prenom": "John",
+    "adresse": {
+        "rue": "rue inconnue",
+        "codePostal": 75000,
+        "ville": "Paris"
+    },
+    "telephone": "1234567891",
+    "email": "email@email.com"
+}
+
+Method : PUT
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/
+Flux : 
+{
+    "idClient": 1,
+    "nom": "Doe",
+    "prenom": "John",
+    "adresse": {
+        "rue": "rue inconnue",
+        "codePostal": 75000,
+        "ville": "Paris"
+    },
+    "telephone": "1234567891",
+    "email": "email@email.com"
+}
+
+Method : DELETE
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1
+
+Method : GET
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1
+
+Method : GET
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients
+
+
+
+
+
+

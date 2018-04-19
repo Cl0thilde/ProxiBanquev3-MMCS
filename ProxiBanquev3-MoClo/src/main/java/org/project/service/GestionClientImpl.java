@@ -30,7 +30,7 @@ public class GestionClientImpl implements GestionClient {
 		Response response = null;
 		Client client = daoClient.readById(updatedClient.getIdClient());
 		if (client != null) {
-			daoClient.update(client);
+			daoClient.update(updatedClient);
 			response = Response.ok("Client modifié").build();
 		} else {
 			response = Response.notModified().build();

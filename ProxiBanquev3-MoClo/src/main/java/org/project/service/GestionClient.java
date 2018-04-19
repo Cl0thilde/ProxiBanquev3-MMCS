@@ -34,7 +34,7 @@ public interface GestionClient {
 
 	@Path("/clients/{idclient}")
 	@GET
-	public Client readClientById(String idClient);
+	public Client readClientById(@PathParam("idclient")String idClient);
 
 	@Path("/clients/")
 	@GET

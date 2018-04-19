@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -25,6 +24,7 @@ public abstract class Compte {
 
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	@JoinColumn(name = "idClient")
+
 	private Client client;
 
 	private Date dateOuverture;

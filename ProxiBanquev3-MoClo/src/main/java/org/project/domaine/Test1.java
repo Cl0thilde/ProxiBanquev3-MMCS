@@ -52,14 +52,32 @@ public class Test1 {
 
 		// daoCompteEpargne.update(cE);
 
-		//// c.setConseiller(co);
-		// dao.create(c);
 
-		// c.setNom("tutu");
-		// c.setIdClient(1);
-		// dao.update(c);
-		// dao.delete(c);
-		// System.out.println(dao.readAll());
+		// IDao<CompteEpargne> daoCompteEpargne = new DaoCompteEpargne();
+		//// // Conseiller co=new Conseiller();
+		//// // co.setIdConseiller(1);
+		////
+		// CompteEpargne cE = new CompteEpargne();
+		////
+		// daoCompteEpargne.create(cE);
+		// c.setCompteEpargne(cE);
+		//
+
+		//
+		// cE.setTauxRemuneration(0.45);
+		// cE.setNumCompte(1);
+		// cE.setSolde(457.56);
+		//
+		// daoCompteEpargne.update(cE);
+		//
+		// //// c.setConseiller(co);
+		// // dao.create(c);
+		//
+		// // c.setNom("tutu");
+		// // c.setIdClient(1);
+		// // dao.update(c);
+		// // dao.delete(c);
+		// // System.out.println(dao.readAll());
 
 	}
 

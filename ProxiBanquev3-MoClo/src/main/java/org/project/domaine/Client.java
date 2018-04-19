@@ -1,16 +1,11 @@
 package org.project.domaine;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -34,11 +29,15 @@ public class Client {
 	// @ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	// @JoinColumn(name = "idConseiller", unique = true)
 	// private Conseiller conseiller;
+
 	@OneToOne(mappedBy = "client",cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	private CompteCourant compteCourant;
 	
 	@OneToOne (mappedBy = "client", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}) 
 	private CompteEpargne compteEpargne;
+
+
+
 	//
 	// public Client(int idClient, Adresse adresse, String telephone, String email,
 	//// Conseiller conseiller,
@@ -122,6 +121,7 @@ public class Client {
 		this.prenom = prenom;
 	}
 
+
 	 public CompteCourant getCompteCourant() {
 	 return compteCourant;
 	 }
@@ -148,4 +148,5 @@ public class Client {
 		 compteEpargne.setClient(this);
 		 this.setCompteEpargne(compteEpargne);
 	 }
+
 }

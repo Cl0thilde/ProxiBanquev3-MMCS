@@ -6,24 +6,22 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import org.project.domaine.CompteEpargne;
+import org.project.util.JPAUtil;
 
 public class DaoCompteEpargne implements IDao<CompteEpargne> {
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");
 
 	@Override
 	public void create(CompteEpargne element) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
 			Date dateOuverture = new Date();
-			DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
+			DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
 			shortDateFormat.format(dateOuverture);
 			element.setDateOuverture(dateOuverture);
 			em.persist(element);
@@ -38,13 +36,12 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 				em.close();
 
 		}
-		emf.close();
 
 	}
 
 	@Override
 	public void update(CompteEpargne element) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
@@ -63,13 +60,12 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 				em.close();
 
 		}
-		emf.close();
 
 	}
 
 	@Override
 	public void delete(CompteEpargne element) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
@@ -87,13 +83,12 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 				em.close();
 
 		}
-		emf.close();
 
 	}
 
 	@Override
 	public CompteEpargne readById(int id) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		CompteEpargne compteEpargne = null;
 		try {
@@ -111,13 +106,13 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 				em.close();
 
 		}
-		emf.close();
+
 		return compteEpargne;
 	}
 
 	@Override
 	public List<CompteEpargne> readAll() {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		List<CompteEpargne> compteEpargnes = new ArrayList<>();
 		try {
@@ -135,7 +130,7 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 				em.close();
 
 		}
-		emf.close();
+
 		return compteEpargnes;
 
 	}

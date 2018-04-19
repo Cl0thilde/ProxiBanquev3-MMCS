@@ -1,9 +1,6 @@
 package org.project.domaine;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -11,9 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class CompteEpargne extends Compte {
 
 	private double tauxRemuneration;
-	
-	
-	
+
 	public CompteEpargne(double tauxRemuneration) {
 		this.tauxRemuneration = tauxRemuneration;
 
@@ -30,6 +25,5 @@ public class CompteEpargne extends Compte {
 	public void setTauxRemuneration(double tauxRemuneration) {
 		this.tauxRemuneration = tauxRemuneration;
 	}
-
 
 }
