@@ -6,19 +6,17 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import org.project.domaine.CompteCourant;
+import org.project.util.JPAUtil;
 
 public class DaoCompteCourant implements IDao<CompteCourant> {
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");
 
 	@Override
 	public void create(CompteCourant element) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
@@ -38,13 +36,12 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 				em.close();
 
 		}
-		emf.close();
 
 	}
 
 	@Override
 	public void update(CompteCourant element) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
@@ -63,12 +60,12 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 				em.close();
 
 		}
-		emf.close();
+
 	}
 
 	@Override
 	public void delete(CompteCourant element) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
@@ -86,12 +83,12 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 				em.close();
 
 		}
-		emf.close();
+
 	}
 
 	@Override
 	public CompteCourant readById(int id) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		CompteCourant compteCourant = null;
 		try {
@@ -109,13 +106,13 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 				em.close();
 
 		}
-		emf.close();
+
 		return compteCourant;
 	}
 
 	@Override
 	public List<CompteCourant> readAll() {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		List<CompteCourant> compteCourants = new ArrayList<>();
 		try {
@@ -133,7 +130,7 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 				em.close();
 
 		}
-		emf.close();
+
 		return compteCourants;
 
 	}

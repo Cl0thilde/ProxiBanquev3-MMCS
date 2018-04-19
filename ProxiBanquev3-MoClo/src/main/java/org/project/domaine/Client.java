@@ -1,15 +1,10 @@
 package org.project.domaine;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -29,16 +24,16 @@ public class Client {
 	private Adresse adresse;
 	private String telephone;
 	private String email;
-//
-//	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-//	@JoinColumn(name = "idConseiller", unique = true)
-//	private Conseiller conseiller;
-
-	//// @OneToOne(mappedBy = "numCompte")
-	// private CompteCourant compteCourant;
 	//
-	//// @OneToOne(mappedBy = "numCompte")
-	// private CompteEpargne compteEpargne;
+	// @ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	// @JoinColumn(name = "idConseiller", unique = true)
+	// private Conseiller conseiller;
+
+//	@OneToOne(mappedBy = "numCompte")
+//	private CompteCourant compteCourant;
+//
+//	@OneToOne(mappedBy = "numCompte")
+//	private CompteEpargne compteEpargne;
 	//
 	// public Client(int idClient, Adresse adresse, String telephone, String email,
 	//// Conseiller conseiller,
@@ -57,18 +52,14 @@ public class Client {
 
 	}
 
-	
-	
 	public Client(String nom, String prenom, Adresse adresse, String telephone, String email) {
-	super();
-	this.nom = nom;
-	this.prenom = prenom;
-	this.adresse = adresse;
-	this.telephone = telephone;
-	this.email = email;
-}
-
-
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.telephone = telephone;
+		this.email = email;
+	}
 
 	public int getIdClient() {
 		return idClient;
@@ -102,13 +93,13 @@ public class Client {
 		this.email = email;
 	}
 
-//	public Conseiller getConseiller() {
-//		return conseiller;
-//	}
-//
-//	public void setConseiller(Conseiller conseiller) {
-//		this.conseiller = conseiller;
-//	}
+	// public Conseiller getConseiller() {
+	// return conseiller;
+	// }
+	//
+	// public void setConseiller(Conseiller conseiller) {
+	// this.conseiller = conseiller;
+	// }
 
 	public String getNom() {
 		return nom;
@@ -126,21 +117,20 @@ public class Client {
 		this.prenom = prenom;
 	}
 
-	// public CompteCourant getCompteCourant() {
-	// return compteCourant;
-	// }
-	//
-	// public void setCompteCourant(CompteCourant compteCourant) {
-	// this.compteCourant = compteCourant;
-	// }
-	//
-	// public CompteEpargne getCompteEpargne() {
-	// return compteEpargne;
-	// }
-	//
-	// public void setCompteEpargne(CompteEpargne compteEpargne) {
-	// this.compteEpargne = compteEpargne;
-	// }
+//	public CompteCourant getCompteCourant() {
+//		return compteCourant;
+//	}
+//
+//	public void setCompteCourant(CompteCourant compteCourant) {
+//		this.compteCourant = compteCourant;
+//	}
+//
+//	public CompteEpargne getCompteEpargne() {
+//		return compteEpargne;
+//	}
+//
+//	public void setCompteEpargne(CompteEpargne compteEpargne) {
+//		this.compteEpargne = compteEpargne;
+//	}
 
-	
 }
