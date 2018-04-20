@@ -19,7 +19,7 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 	private static Logger LOGGER = LoggerFactory.getLogger(DaoCompteCourant.class);
 
 	@Override
-	public void create(CompteCourant element) {
+	public int create(CompteCourant element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -40,11 +40,11 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 				em.close();
 
 		}
-
+		return element.getNumCompte();
 	}
 
 	@Override
-	public void update(CompteCourant element) {
+	public int update(CompteCourant element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -62,11 +62,11 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 				em.close();
 
 		}
-
+		return element.getNumCompte();
 	}
 
 	@Override
-	public void delete(CompteCourant element) {
+	public int delete(CompteCourant element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -85,7 +85,7 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 				em.close();
 
 		}
-
+		return element.getNumCompte();
 	}
 
 	@Override

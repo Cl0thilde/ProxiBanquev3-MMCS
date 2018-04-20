@@ -176,4 +176,12 @@ public class GestionClientImpl implements GestionClient {
 		return comptes;
 	}
 
+	public IDao<Client> getDaoClient() {
+		return daoClient;
+	}
+
+	public void setDaoClient(IDao<Client> daoClient) {
+		this.daoClient = daoClient;
+	}
+
 }

@@ -13,12 +13,12 @@ import org.project.util.JPAUtil;
 public class DaoClient implements IDao<Client> {
 
 	@Override
-	public void create(Client element) {
+	public int create(Client element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
-			
+
 			em.persist(element);
 
 			txn.commit();
@@ -31,21 +31,21 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		
+		return element.getIdClient();
 	}
 
 	@Override
-	public void update(Client element) {
+	public int update(Client element) {
 		// TODO Auto-generated method stub
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
-//			Client client = em.find(Client.class, element.getIdClient());
-//			client.setAdresse(element.getAdresse());
-//			client.setNom(element.getNom());
-//			client.setPrenom(element.getPrenom());
-//			client.setEmail(element.getEmail());
+			// Client client = em.find(Client.class, element.getIdClient());
+			// client.setAdresse(element.getAdresse());
+			// client.setNom(element.getNom());
+			// client.setPrenom(element.getPrenom());
+			// client.setEmail(element.getEmail());
 			em.merge(element);
 
 			txn.commit();
@@ -58,11 +58,11 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-	
+		return element.getIdClient();
 	}
 
 	@Override
-	public void delete(Client element) {
+	public int delete(Client element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -81,7 +81,7 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		
+		return element.getIdClient();
 	}
 
 	@Override
@@ -104,12 +104,13 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		
+
 		return client;
 	}
 
 	@Override
-	public List<Client> readAll() {EntityManager em = JPAUtil.EMF.createEntityManager();
+	public List<Client> readAll() {
+		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		List<Client> clients = new ArrayList<>();
 		try {
@@ -127,10 +128,9 @@ public class DaoClient implements IDao<Client> {
 				em.close();
 
 		}
-		
+
 		return clients;
 
 	}
-		
 
 }
