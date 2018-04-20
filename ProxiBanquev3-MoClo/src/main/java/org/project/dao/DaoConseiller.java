@@ -13,15 +13,15 @@ import org.project.domaine.Conseiller;
 import org.project.domaine.Conseiller;
 import org.project.util.JPAUtil;
 
-public class DaoConseiller implements IDao<Conseiller>{
+public class DaoConseiller implements IDao<Conseiller> {
 
 	@Override
-	public void create(Conseiller element) {
+	public int create(Conseiller element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
-			
+
 			em.persist(element);
 
 			txn.commit();
@@ -34,17 +34,17 @@ public class DaoConseiller implements IDao<Conseiller>{
 				em.close();
 
 		}
-		
+		return element.getIdConseiller();
 	}
 
 	@Override
-	public void update(Conseiller element) {
+	public int update(Conseiller element) {
 		// TODO Auto-generated method stub
-		
+		return element.getIdConseiller();
 	}
 
 	@Override
-	public void delete(Conseiller element) {
+	public int delete(Conseiller element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -63,7 +63,7 @@ public class DaoConseiller implements IDao<Conseiller>{
 				em.close();
 
 		}
-		
+		return element.getIdConseiller();
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class DaoConseiller implements IDao<Conseiller>{
 				em.close();
 
 		}
-		
+
 		return conseiller;
 	}
 
@@ -110,9 +110,8 @@ public class DaoConseiller implements IDao<Conseiller>{
 				em.close();
 
 		}
-		
+
 		return conseillers;
 
 	}
-	}
-
+}

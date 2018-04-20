@@ -15,7 +15,7 @@ import org.project.util.JPAUtil;
 public class DaoCompteEpargne implements IDao<CompteEpargne> {
 
 	@Override
-	public void create(CompteEpargne element) {
+	public int create(CompteEpargne element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -36,11 +36,11 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 				em.close();
 
 		}
-
+		return element.getNumCompte();
 	}
 
 	@Override
-	public void update(CompteEpargne element) {
+	public int update(CompteEpargne element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -60,11 +60,11 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 				em.close();
 
 		}
-
+		return element.getNumCompte();
 	}
 
 	@Override
-	public void delete(CompteEpargne element) {
+	public int delete(CompteEpargne element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		try {
@@ -83,7 +83,7 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 				em.close();
 
 		}
-
+		return element.getNumCompte();
 	}
 
 	@Override
