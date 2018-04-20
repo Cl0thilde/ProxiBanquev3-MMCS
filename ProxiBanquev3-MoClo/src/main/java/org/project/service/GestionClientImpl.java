@@ -17,15 +17,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * 
+ * Implementation de l'interface de service ; Cette classe implémente les
+ * différentes méthodes utilisables par un conseiller
+ * 
  * @author Morane & Clothilde
  *
  */
 
-/**
- * Implementation de l'interface de service ; Cette classe implémente les
- * différentes méthodes utilisables par un conseiller
- *
- */
 public class GestionClientImpl implements GestionClient {
 	IDao<Client> daoClient = new DaoClient();
 	IDao<CompteCourant> daoCompteCourant = new DaoCompteCourant();
@@ -63,8 +62,8 @@ public class GestionClientImpl implements GestionClient {
 	}
 
 	/**
-	 * Méthode de suppression d'un client existant ; Si le client n'existe pas, la base
-	 * de données n'est pas modifiée
+	 * Méthode de suppression d'un client existant ; Si le client n'existe pas, la
+	 * base de données n'est pas modifiée
 	 */
 	@Override
 	public Response deleteClient(String idClient) {

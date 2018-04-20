@@ -7,10 +7,6 @@ import org.project.domaine.CompteCourant;
  *
  */
 
-/**
- * Interface des opérations bancaires
- * 
- */
 public interface ProxiBanqueSI {
 
 	public void virementCompteACompte(CompteCourant c1, CompteCourant c2);

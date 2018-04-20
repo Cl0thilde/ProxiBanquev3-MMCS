@@ -14,13 +14,12 @@ import org.project.dao.IDao;
 import org.project.domaine.Client;
 
 /**
+ * Classe Gestion ClientTest permet de faire des tests Mockito
+ * 
  * @author Clothilde et Morane
  *
  */
 
-/**
- * Classe Gestion ClientTest permet de faire des tests Mockito
- */
 public class GestionClientTest {
 
 	@Mock

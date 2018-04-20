@@ -13,12 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
+ * Classe abstraite Compte avec les attributs numCompte, solde, dateOuverture.
+ * 
  * @author Clothilde et Morane
  *
- */
-
-/**
- * Classe abstraite Compte avec les attributs numCompte, solde, dateOuverture.
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

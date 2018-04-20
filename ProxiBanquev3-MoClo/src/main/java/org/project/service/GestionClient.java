@@ -17,14 +17,13 @@ import org.project.domaine.CompteCourant;
 import org.project.domaine.CompteEpargne;
 
 /**
+ * 
+ * Interface de gestion des clients et de leur comptes
+ * 
  * @author Morane & Clothilde
  *
  */
 
-/**
- * Interface de gestion des clients et de leur comptes
- * 
- */
 @Produces({ "application/xml", "application/json" })
 public interface GestionClient {
 

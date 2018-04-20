@@ -11,11 +11,9 @@ import org.project.domaine.Client;
 import org.project.util.JPAUtil;
 
 /**
+ * Dao du client implémentée
  * @author Morane et Clothilde
  *
- */
-/**
- * Dao du client implémentée
  */
 public class DaoClient implements IDao<Client> {
 

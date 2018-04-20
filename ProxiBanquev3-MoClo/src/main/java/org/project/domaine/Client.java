@@ -8,12 +8,11 @@ import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
+ * Classe Client
+ * 
  * @author Clothilde et Morane
  */
 
-/**
- * Classe Client
- */
 @XmlRootElement
 @Entity
 public class Client {

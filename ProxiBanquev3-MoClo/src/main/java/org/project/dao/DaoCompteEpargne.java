@@ -13,12 +13,11 @@ import org.project.domaine.CompteEpargne;
 import org.project.util.JPAUtil;
 
 /**
- * @author Clothide et Morane
+ * 
+@author Clothide et Morane
  *
  */
-/**
- * Dao du compte Epargne implémentée
- */
+
 public class DaoCompteEpargne implements IDao<CompteEpargne> {
 	/**
 	 * Méthode create() permet de persister un compte épargne dans la base de

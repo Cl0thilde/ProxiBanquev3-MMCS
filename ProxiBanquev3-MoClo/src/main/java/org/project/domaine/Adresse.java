@@ -3,13 +3,12 @@ package org.project.domaine;
 import javax.persistence.Embeddable;
 
 /**
+ * Adresse du client relier aux clients dans la base de données.
+ * 
  * @author Clothilde et Morane
  *
  */
 
-/**
- * Adresse du client relier aux clients dans la base de données.
- */
 @Embeddable
 public class Adresse {
 

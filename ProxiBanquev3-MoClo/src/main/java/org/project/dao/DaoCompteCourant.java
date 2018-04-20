@@ -15,11 +15,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Morane et Clothilde
+ * 
+ * Dao du compte courant implémentée@author Morane et Clothilde
  *
- */
-/**
- * Dao du compte courant implémentée
  */
 public class DaoCompteCourant implements IDao<CompteCourant> {
 

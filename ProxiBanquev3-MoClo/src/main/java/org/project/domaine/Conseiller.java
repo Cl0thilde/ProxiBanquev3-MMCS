@@ -3,13 +3,11 @@ package org.project.domaine;
 import java.util.List;
 
 /**
+ * Classe du conseiller ; Prête pour les prochaines itérations du projet
+ * 
  * @author Morane & Clothilde
  *
- */
-
-/**
- * Classe du conseiller ; Prête pour les prochaines itérations du projet
- *
+ * 
  */
 
 public class Conseiller {
