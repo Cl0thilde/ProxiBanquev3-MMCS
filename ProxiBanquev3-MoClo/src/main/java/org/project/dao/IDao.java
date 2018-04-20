@@ -14,4 +14,6 @@ public interface IDao<T> {
 
 	public List<T> readAll();
 
+	public List<T> readAllById(int id);
+
 }

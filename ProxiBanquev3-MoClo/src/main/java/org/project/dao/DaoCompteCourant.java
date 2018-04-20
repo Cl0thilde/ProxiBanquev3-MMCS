@@ -121,22 +121,8 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		List<CompteCourant> compteCourants = new ArrayList<>();
 		try {
 			txn.begin();
-			// TypedQuery<CompteCourant> queryCompteCourant = em.createQuery("from
-			// CompteCourant", CompteCourant.class);
-			// compteCourants = queryCompteCourant.getResultList();
-
-			TypedQuery<Movie> tq = em.createQuery("select m from Movie m Join fetch m.actors a where m.idMovie= :id",
-					Movie.class);
-			tq.setParameter("id", 4);
-
-			Movie m = tq.getSingleResult();
-
-			TypedQuery<CompteCourant> queryCompteCourant = em.createQuery(
-					"select cc from CompteCourant cc Join fetch cc.client c where cc.numCompte= :id",
-					CompteCourant.class);
-			queryCompteCourant.setParameter("id", 4);
-
-			compteCourants = tq.getResultList();
+			TypedQuery<CompteCourant> queryCompteCourant = em.createQuery("from CompteCourant", CompteCourant.class);
+			compteCourants = queryCompteCourant.getResultList();
 
 			txn.commit();
 		} catch (Exception e) {
@@ -152,4 +138,35 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		return compteCourants;
 
 	}
+
+	@Override
+	public List<CompteCourant> readAllById(int idClient) {
+		EntityManager em = JPAUtil.EMF.createEntityManager();
+		EntityTransaction txn = em.getTransaction();
+		List<CompteCourant> compteCourants = new ArrayList<>();
+		Client c = null;
+		try {
+			txn.begin();
+
+			TypedQuery<Client> tq = em.createQuery(
+					"select c from CompteCourant c Join fetch c.comptecourants cc where c.idClient= :id", Client.class);
+			tq.setParameter("id", idClient);
+
+			c = tq.getSingleResult();
+
+			txn.commit();
+		} catch (Exception e) {
+			if (txn != null)
+				txn.rollback();
+
+		} finally {
+			if (em != null)
+				em.close();
+
+		}
+
+		return compteCourants;
+
+	}
+
 }
