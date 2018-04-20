@@ -5,125 +5,105 @@ Method : POST
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/
 Flux :
 {
-      "nom": "Doe",
-    "prenom": "John",
+      "nom": "String",
+    "prenom": "String",
     "adresse": {
-        "rue": "rue inconnue",
-        "codePostal": 75000,
-        "ville": "Paris"
+        "rue": "String",
+        "codePostal": int,
+        "ville": "String"
     },
-    "telephone": "1234567891",
-    "email": "email@email.com"
+    "telephone": "String",
+    "email": "String"
 }
 
 Method : PUT
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/
 Flux : 
 {
-    "idClient": 1,
-    "nom": "Doe",
-    "prenom": "John",
+    "idClient": {idClient},
+    "nom": "String",
+    "prenom": "String",
     "adresse": {
-        "rue": "rue inconnue",
-        "codePostal": 75000,
-        "ville": "Paris"
+        "rue": "String",
+        "codePostal": int,
+        "ville": "String"
     },
-    "telephone": "1234567891",
-    "email": "email@email.com"
+    "telephone": "String",
+    "email": "String"
 }
 
 Method : DELETE
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}
 
 Method : GET
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}
 
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients
--------------------------------------------------------------------------------------------------------------
-													COMPTES
--------------------------------------------------------------------------------------------------------------
-Method : GET
-http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/
+
 -------------------------------------------------------------------------------------------------------------
 												COMPTES COURANTS
 -------------------------------------------------------------------------------------------------------------
 Method : POST
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/
 Flux :
    {
         "solde": double,
         "decouvertAutorise": double,
-        "carteVisa": "cartePremier"/"carteElectron"
+        "carteVisa": "CartePremier"/"CarteElectron"
     }
 		
 Method : PUT
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/
 Flux : 
 {
-    "numCompte": 21,
-    "solde": 100,
+    "numCompte": {numCompte},
+    "solde": double,
     "dateOuverture": 1524216393000,
-    "decouvertAutorise": 2503,
-    "carteVisa": "CartePremier"
+    "decouvertAutorise": double,
+    "carteVisa": "CartePremier"/"CarteElectron"
 }
 	
 Method : DELETE
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/1
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/{numCompte}
 
 Method : GET
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/{numCompte}
+
+Method : GET
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/
 
 -------------------------------------------------------------------------------------------------------------
 												COMPTES EPARGNES
 -------------------------------------------------------------------------------------------------------------
 Method : POST
-URL : 
-
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/
+Flux : 
+{
+    "solde": double,
+    "tauxRemuneration": double
+}
 Method : PUT
-URL : 
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/
+Flux :  
+{
+    "numCompte": {numCompte},
+    "solde": double,
+    "dateOuverture": 1524222198000,
+    "tauxRemuneration": double
+}
 
 Method : DELETE
-URL : 
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/{numCompte}
 
 Method : GET
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_epargnes/
-   
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/{numCompte}
 
+Method : GET
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/
 
-
-
-
-
-	
-	    {
-        "numCompte": 2,
-        "solde": 267,
-        "client": {
-            "idClient": 1,
-            "nom": "Doe",
-            "prenom": "John",
-            "adresse": {
-                "rue": "rue inconnue",
-                "codePostal": 75000,
-                "ville": "Paris"
-            },
-            "telephone": "1234567890",
-            "email": "email"
-        },
-        "dateOuverture": 1524088800000,
-        "tauxRemuneration": 3.2
-    }
-	
-	
-Creation comptes
-    {
-        "solde": 200,
-        "client": {
-            "idClient": 2
-        },
-        "dateOuverture": null,
-        "decouvertAutorise": 0.1,
-        "carteVisa": "carteVisa"
-    }
-
+-------------------------------------------------------------------------------------------------------------
+											TOUS LES COMPTES D'UN CLIENT
+-------------------------------------------------------------------------------------------------------------
+Method : GET
+http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/
