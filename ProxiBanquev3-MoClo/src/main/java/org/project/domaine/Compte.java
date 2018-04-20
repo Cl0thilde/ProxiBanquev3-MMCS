@@ -12,16 +12,30 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+/**
+ * @author Clothilde et Morane
+ *
+ */
+
+/**
+ * Classe abstraite Compte avec les attributs numCompte, solde, dateOuverture.
+ */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Compte {
 
+	/**
+	 * id d'un Compte est numCompte
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int numCompte;
 
 	private double solde;
 
+	/**
+	 * La table compte relier à la table client par un OneToOne
+	 */
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinColumn(name = "idClient")
 	private Client client;

@@ -10,7 +10,18 @@ import javax.persistence.TypedQuery;
 import org.project.domaine.Client;
 import org.project.util.JPAUtil;
 
+/**
+ * @author Morane et Clothilde
+ *
+ */
+/**
+ * Dao du client implémentée
+ */
 public class DaoClient implements IDao<Client> {
+
+	/**
+	 * méthode Create() pour persister un client dans la base de données
+	 */
 
 	@Override
 	public int create(Client element) {
@@ -35,6 +46,9 @@ public class DaoClient implements IDao<Client> {
 		return element.getIdClient();
 	}
 
+	/**
+	 * Méthode update() permet de mettre à jour le client dans la base de données
+	 */
 	@Override
 	public int update(Client element) {
 		// TODO Auto-generated method stub
@@ -62,6 +76,9 @@ public class DaoClient implements IDao<Client> {
 		return element.getIdClient();
 	}
 
+	/**
+	 * Méthode delete() permet de supprimer un client dans la base de données
+	 */
 	@Override
 	public int delete(Client element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -85,6 +102,9 @@ public class DaoClient implements IDao<Client> {
 		return element.getIdClient();
 	}
 
+	/**
+	 * Méthode readById() permet d'afficher un client de la base de données
+	 */
 	@Override
 	public Client readById(int id) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -109,6 +129,9 @@ public class DaoClient implements IDao<Client> {
 		return client;
 	}
 
+	/**
+	 * Méthode readAll() permet d'afficher tous les clients de la base de données
+	 */
 	@Override
 	public List<Client> readAll() {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
