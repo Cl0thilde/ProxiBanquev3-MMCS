@@ -14,10 +14,21 @@ import org.project.util.JPAUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Morane et Clothilde
+ *
+ */
+/**
+ * Dao du compte courant implémentée
+ */
 public class DaoCompteCourant implements IDao<CompteCourant> {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(DaoCompteCourant.class);
 
+	/**
+	 * Méthode create() permet de persister un ccompte courant dans la base de
+	 * données
+	 */
 	@Override
 	public int create(CompteCourant element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -43,6 +54,10 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		return element.getNumCompte();
 	}
 
+	/**
+	 * Méthode update() permet de mettre à jour un compte courant dans la base de
+	 * données
+	 */
 	@Override
 	public int update(CompteCourant element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -65,6 +80,10 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		return element.getNumCompte();
 	}
 
+	/**
+	 * Méthode delete() permet de supprimer un compte courant dans la base de
+	 * données
+	 */
 	@Override
 	public int delete(CompteCourant element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -88,6 +107,9 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		return element.getNumCompte();
 	}
 
+	/**
+	 * Méthode readById() permet d'afficher un compte courant de la base de données
+	 */
 	@Override
 	public CompteCourant readById(int id) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -112,6 +134,10 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		return compteCourant;
 	}
 
+	/**
+	 * Méthode readAll() permet d'afficher tous les comptes courants de la base de
+	 * données
+	 */
 	@Override
 	public List<CompteCourant> readAll() {
 		EntityManager em = JPAUtil.EMF.createEntityManager();

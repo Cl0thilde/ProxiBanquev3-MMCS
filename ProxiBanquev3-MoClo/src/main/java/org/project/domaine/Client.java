@@ -5,9 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * @author Clothilde et Morane
+ */
+
+/**
+ * Classe Client
+ */
 @XmlRootElement
 @Entity
 public class Client {
@@ -20,6 +26,9 @@ public class Client {
 
 	private String prenom;
 
+	/**
+	 * Classe Adresse relier à la classe Client
+	 */
 	@Embedded
 	private Adresse adresse;
 	private String telephone;

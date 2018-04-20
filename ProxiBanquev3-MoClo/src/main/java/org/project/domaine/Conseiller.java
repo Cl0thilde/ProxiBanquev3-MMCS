@@ -2,10 +2,6 @@ package org.project.domaine;
 
 import java.util.List;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 /**
  * @author Morane & Clothilde
  *
@@ -15,18 +11,13 @@ import javax.persistence.Id;
  * Classe du conseiller ; Prête pour les prochaines itérations du projet
  *
  */
+
 public class Conseiller {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idConseiller;
-
 	private String nom;
-
 	private String prenom;
 	private String password;
 	private String login;
-
 	private List<Client> clients;
 
 	public Conseiller(int idConseiller, List<Client> clients) {
@@ -43,6 +34,7 @@ public class Conseiller {
 	}
 
 	public Conseiller() {
+		super();
 	}
 
 	public int getIdConseiller() {

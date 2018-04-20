@@ -288,4 +288,20 @@ public class GestionClientImpl implements GestionClient {
 		this.daoClient = daoClient;
 	}
 
+	public IDao<CompteCourant> getDaoCompteCourant() {
+		return daoCompteCourant;
+	}
+
+	public void setDaoCompteCourant(IDao<CompteCourant> daoCompteCourant) {
+		this.daoCompteCourant = daoCompteCourant;
+	}
+
+	public IDao<CompteEpargne> getDaoCompteEpargne() {
+		return daoCompteEpargne;
+	}
+
+	public void setDaoCompteEpargne(IDao<CompteEpargne> daoCompteEpargne) {
+		this.daoCompteEpargne = daoCompteEpargne;
+	}
+
 }
