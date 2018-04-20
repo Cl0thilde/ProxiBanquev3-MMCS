@@ -266,14 +266,11 @@ public class GestionClientImpl implements GestionClient {
 	}
 
 	/**
-	 * Méthode de lecture de tous les comptes d'un client
+	 * Méthode de lecture de tous les comptes
 	 * 
 	 */
 	@Override
-	public List<Compte> readAllCompte(String idClient) {
-		int id = Integer.parseInt(idClient);
-		Client client = daoClient.readById(id);
-
+	public List<Compte> readAllCompte() {
 		List<Compte> comptes = new ArrayList<>();
 		List<CompteCourant> comptesCourant = daoCompteCourant.readAll();
 		List<CompteEpargne> comptesEpargne = daoCompteEpargne.readAll();

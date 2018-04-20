@@ -42,11 +42,6 @@ public class DaoClient implements IDao<Client> {
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
-			// Client client = em.find(Client.class, element.getIdClient());
-			// client.setAdresse(element.getAdresse());
-			// client.setNom(element.getNom());
-			// client.setPrenom(element.getPrenom());
-			// client.setEmail(element.getEmail());
 			em.merge(element);
 
 			txn.commit();

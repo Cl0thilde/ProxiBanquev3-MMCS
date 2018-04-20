@@ -2,15 +2,9 @@ package org.project.domaine;
 
 import java.util.List;
 
-//import javax.persistence.CascadeType;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author Morane & Clothilde
@@ -21,8 +15,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  * Classe du conseiller ; Prête pour les prochaines itérations du projet
  *
  */
-@XmlRootElement
-@Entity
 public class Conseiller {
 
 	@Id
@@ -35,7 +27,6 @@ public class Conseiller {
 	private String password;
 	private String login;
 
-	@OneToMany(mappedBy = "conseiller")
 	private List<Client> clients;
 
 	public Conseiller(int idConseiller, List<Client> clients) {
@@ -102,8 +93,4 @@ public class Conseiller {
 		this.login = login;
 	}
 
-	public void addClient(Client client) {
-		clients.add(client);
-		client.setConseiller(this);
-	}
 }

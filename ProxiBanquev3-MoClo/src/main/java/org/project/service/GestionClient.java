@@ -72,7 +72,7 @@ public interface GestionClient {
 	@GET
 	public CompteCourant readCompteCourantByNum(@PathParam("numcompte") String numCompte);
 
-	@Path("/clients/{idclient}/comptes/comptes_courants/")
+	@Path("/clients/comptes/comptes_courants/")
 	@GET
 	public List<CompteCourant> readAllCompteCourant();
 
@@ -96,7 +96,7 @@ public interface GestionClient {
 	@GET
 	public CompteEpargne readCompteEpargneByNum(@PathParam("numcompte") String numCompte);
 
-	@Path("/clients/{idclient}/comptes/comptes_epargnes/")
+	@Path("/clients/comptes/comptes_epargnes/")
 	@GET
 	public List<CompteEpargne> readAllCompteEpargne();
 
@@ -104,8 +104,8 @@ public interface GestionClient {
 	 * Méthodes d'affichage de tous les comptes
 	 * 
 	 */
-	@Path("/clients/{idclient}/comptes/")
+	@Path("/clients/comptes/")
 	@GET
-	public List<Compte> readAllCompte(@PathParam("idclient") String idClient);
+	public List<Compte> readAllCompte();
 
 }

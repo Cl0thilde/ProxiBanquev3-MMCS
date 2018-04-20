@@ -12,8 +12,18 @@ import javax.persistence.TypedQuery;
 import org.project.domaine.CompteEpargne;
 import org.project.util.JPAUtil;
 
+/**
+ * @author Clothide et Morane
+ *
+ */
+/**
+ * Dao du compte Epargne implémentée
+ */
 public class DaoCompteEpargne implements IDao<CompteEpargne> {
-
+	/**
+	 * Méthode create() permet de persister un compte épargne dans la base de
+	 * données
+	 */
 	@Override
 	public int create(CompteEpargne element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -39,6 +49,10 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 		return element.getNumCompte();
 	}
 
+	/**
+	 * Méthode update() permet de mettre à jour un compte épargne dans la base de
+	 * données
+	 */
 	@Override
 	public int update(CompteEpargne element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -60,6 +74,10 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 		return element.getNumCompte();
 	}
 
+	/**
+	 * Méthode delete() permet de supprimer un compte épargne dans la base de
+	 * données
+	 */
 	@Override
 	public int delete(CompteEpargne element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -83,6 +101,9 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 		return element.getNumCompte();
 	}
 
+	/**
+	 * Méthode readById() permet d'afficher un compte épargne de la base de données
+	 */
 	@Override
 	public CompteEpargne readById(int id) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
@@ -107,6 +128,10 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 		return compteEpargne;
 	}
 
+	/**
+	 * Méthode readAll() permet d'afficher plusieurs comptes épargnes de la base de
+	 * données
+	 */
 	@Override
 	public List<CompteEpargne> readAll() {
 		EntityManager em = JPAUtil.EMF.createEntityManager();

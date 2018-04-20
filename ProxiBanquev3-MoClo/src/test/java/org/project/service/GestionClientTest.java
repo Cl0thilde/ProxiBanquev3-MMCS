@@ -13,6 +13,14 @@ import org.mockito.MockitoAnnotations;
 import org.project.dao.IDao;
 import org.project.domaine.Client;
 
+/**
+ * @author Clothilde et Morane
+ *
+ */
+
+/**
+ * Classe Gestion ClientTest permet de faire des tests Mockito
+ */
 public class GestionClientTest {
 
 	@Mock
@@ -26,16 +34,23 @@ public class GestionClientTest {
 		Gcl.setDaoClient(dao);
 	}
 
+	/**
+	 * Méthode createClient_Should_Create_A_Client() permet de tester la méthode
+	 * createClient() du service client
+	 */
 	@Test
 	public void createClient_Should_Create_A_Client() {
 		Client client = new Client();
-		client.setIdClient(1);
 		when(dao.create(client)).thenReturn(client.getIdClient());
 		assertTrue(Gcl.createClient(client).getStatus() == 200);
 		verify(dao).create(client);
 
 	}
 
+	/**
+	 * Méthode readClient_Should_Read_A_Client() permet de tester la méthode
+	 * readClientById() du service client
+	 */
 	@Test
 	public void readClient_Should_Read_A_Client() {
 		Client client = new Client();

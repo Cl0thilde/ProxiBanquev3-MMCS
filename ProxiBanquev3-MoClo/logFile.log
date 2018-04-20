@@ -1518,3 +1518,255 @@
 				- HHH000232: Schema update complete
 13:03:18.059 1191 [main] DEBUG org.project.dao.DaoCompteCourant
 				- Compte courant à créer : 
+15:48:08.241 203  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:48:08.241 203  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:48:08.241 203  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:48:08.303 265  [main] INFO  o.h.jpa.internal.util.LogHelper
+				- HHH000204: Processing PersistenceUnitInfo [
+	name: my-pu
+	...]
+15:48:08.350 312  [main] INFO  org.hibernate.Version
+				- HHH000412: Hibernate Core {4.3.5.Final}
+15:48:08.350 312  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000206: hibernate.properties not found
+15:48:08.350 312  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000021: Bytecode provider name : javassist
+15:48:08.507 469  [main] INFO  o.h.annotations.common.Version
+				- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+15:48:08.523 485  [main] WARN  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000402: Using Hibernate built-in connection pool (not for production use!)
+15:48:08.538 500  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/Proxiv3Clo2?createDatabaseIfNotExist=true]
+15:48:08.538 500  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000046: Connection properties: {user=root}
+15:48:08.538 500  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000006: Autocommit mode: false
+15:48:08.538 500  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000115: Hibernate connection pool size: 20 (min=1)
+15:48:08.710 672  [main] INFO  org.hibernate.dialect.Dialect
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:54:07.478 282  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:54:07.478 282  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:54:07.478 282  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:54:07.556 360  [main] INFO  o.h.jpa.internal.util.LogHelper
+				- HHH000204: Processing PersistenceUnitInfo [
+	name: my-pu
+	...]
+15:54:07.634 438  [main] INFO  org.hibernate.Version
+				- HHH000412: Hibernate Core {4.3.5.Final}
+15:54:07.634 438  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000206: hibernate.properties not found
+15:54:07.634 438  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000021: Bytecode provider name : javassist
+15:54:07.821 625  [main] INFO  o.h.annotations.common.Version
+				- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+15:54:07.837 641  [main] WARN  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000402: Using Hibernate built-in connection pool (not for production use!)
+15:54:07.837 641  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/Proxiv3Clo2?createDatabaseIfNotExist=true]
+15:54:07.837 641  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000046: Connection properties: {user=root}
+15:54:07.837 641  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000006: Autocommit mode: false
+15:54:07.852 656  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000115: Hibernate connection pool size: 20 (min=1)
+15:54:08.055 859  [main] INFO  org.hibernate.dialect.Dialect
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:54:08.164 968  [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory
+				- HHH000397: Using ASTQueryTranslatorFactory
+15:54:08.399 1203 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000228: Running hbm2ddl schema update
+15:54:08.399 1203 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000102: Fetching database metadata
+15:54:08.415 1219 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000396: Updating schema
+15:54:08.415 1219 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Client
+15:54:08.415 1219 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Compte
+15:54:08.415 1219 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Client
+15:54:08.415 1219 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Compte
+15:54:08.415 1219 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Client
+15:54:08.415 1219 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Compte
+15:54:09.398 2202 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000232: Schema update complete
+15:54:53.980 187  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:54:53.980 187  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:54:53.980 187  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:54:54.027 234  [main] INFO  o.h.jpa.internal.util.LogHelper
+				- HHH000204: Processing PersistenceUnitInfo [
+	name: my-pu
+	...]
+15:54:54.074 281  [main] INFO  org.hibernate.Version
+				- HHH000412: Hibernate Core {4.3.5.Final}
+15:54:54.074 281  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000206: hibernate.properties not found
+15:54:54.074 281  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000021: Bytecode provider name : javassist
+15:54:54.198 405  [main] INFO  o.h.annotations.common.Version
+				- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+15:54:54.230 437  [main] WARN  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000402: Using Hibernate built-in connection pool (not for production use!)
+15:54:54.230 437  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/ProxiBanquev3MoClo?createDatabaseIfNotExist=true]
+15:54:54.230 437  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000046: Connection properties: {user=root}
+15:54:54.230 437  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000006: Autocommit mode: false
+15:54:54.230 437  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000115: Hibernate connection pool size: 20 (min=1)
+15:54:54.401 608  [main] INFO  org.hibernate.dialect.Dialect
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:54:54.510 717  [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory
+				- HHH000397: Using ASTQueryTranslatorFactory
+15:54:54.729 936  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000228: Running hbm2ddl schema update
+15:54:54.729 936  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000102: Fetching database metadata
+15:54:54.729 936  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000396: Updating schema
+15:54:54.729 936  [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Client
+15:54:54.729 936  [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Compte
+15:54:54.729 936  [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Client
+15:54:54.729 936  [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Compte
+15:54:54.729 936  [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Client
+15:54:54.729 936  [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Compte
+15:54:55.858 2065 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000232: Schema update complete
+15:56:35.478 172  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:56:35.478 172  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:56:35.478 172  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:56:35.525 219  [main] INFO  o.h.jpa.internal.util.LogHelper
+				- HHH000204: Processing PersistenceUnitInfo [
+	name: my-pu
+	...]
+15:56:35.571 265  [main] INFO  org.hibernate.Version
+				- HHH000412: Hibernate Core {4.3.5.Final}
+15:56:35.571 265  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000206: hibernate.properties not found
+15:56:35.571 265  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000021: Bytecode provider name : javassist
+15:56:35.712 406  [main] INFO  o.h.annotations.common.Version
+				- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+15:56:35.727 421  [main] WARN  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000402: Using Hibernate built-in connection pool (not for production use!)
+15:56:35.727 421  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/ProxiBanquev3MoClo?createDatabaseIfNotExist=true]
+15:56:35.727 421  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000046: Connection properties: {user=root}
+15:56:35.727 421  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000006: Autocommit mode: false
+15:56:35.727 421  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000115: Hibernate connection pool size: 20 (min=1)
+15:56:35.899 593  [main] INFO  org.hibernate.dialect.Dialect
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:56:36.008 702  [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory
+				- HHH000397: Using ASTQueryTranslatorFactory
+15:56:36.242 936  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000228: Running hbm2ddl schema update
+15:56:36.242 936  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000102: Fetching database metadata
+15:56:36.242 936  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000396: Updating schema
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000261: Table found: ProxiBanquev3MoClo.client
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000037: Columns: [ville, rue, codepostal, telephone, idclient, nom, prenom, email]
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000108: Foreign keys: []
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000126: Indexes: [primary]
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000261: Table found: ProxiBanquev3MoClo.compte
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000037: Columns: [numcompte, cartevisa, decouvertautorise, dateouverture, tauxremuneration, dtype, solde, idclient]
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000108: Foreign keys: [fk_gicmr6ft2omm5nl94e2cits6f]
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000126: Indexes: [fk_gicmr6ft2omm5nl94e2cits6f, primary]
+15:56:36.258 952  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000232: Schema update complete
+15:56:36.384 1078 [main] DEBUG org.project.dao.DaoCompteCourant
+				- Compte courant à créer : 
+15:56:36.446 1140 [main] DEBUG org.project.dao.DaoCompteCourant
+				- Compte courant à créer : 
+15:56:36.477 1171 [main] DEBUG org.project.dao.DaoCompteCourant
+				- Compte courant à créer : 
+15:57:13.131 187  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:57:13.147 203  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:57:13.147 203  [main] WARN  o.h.ejb.HibernatePersistence
+				- HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:57:13.194 250  [main] INFO  o.h.jpa.internal.util.LogHelper
+				- HHH000204: Processing PersistenceUnitInfo [
+	name: my-pu
+	...]
+15:57:13.241 297  [main] INFO  org.hibernate.Version
+				- HHH000412: Hibernate Core {4.3.5.Final}
+15:57:13.241 297  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000206: hibernate.properties not found
+15:57:13.241 297  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000021: Bytecode provider name : javassist
+15:57:13.381 437  [main] INFO  o.h.annotations.common.Version
+				- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+15:57:13.397 453  [main] WARN  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000402: Using Hibernate built-in connection pool (not for production use!)
+15:57:13.397 453  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/ProxiBanquev3MoClo?createDatabaseIfNotExist=true]
+15:57:13.397 453  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000046: Connection properties: {user=root}
+15:57:13.397 453  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000006: Autocommit mode: false
+15:57:13.397 453  [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl
+				- HHH000115: Hibernate connection pool size: 20 (min=1)
+15:57:13.568 624  [main] INFO  org.hibernate.dialect.Dialect
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:57:13.677 733  [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory
+				- HHH000397: Using ASTQueryTranslatorFactory
+15:57:13.911 967  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000228: Running hbm2ddl schema update
+15:57:13.911 967  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000102: Fetching database metadata
+15:57:13.911 967  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000396: Updating schema
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000261: Table found: ProxiBanquev3MoClo.client
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000037: Columns: [ville, rue, codepostal, telephone, idclient, nom, prenom, email]
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000108: Foreign keys: []
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000126: Indexes: [primary]
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000261: Table found: ProxiBanquev3MoClo.compte
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000037: Columns: [numcompte, cartevisa, decouvertautorise, dateouverture, tauxremuneration, dtype, solde, idclient]
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000108: Foreign keys: [fk_gicmr6ft2omm5nl94e2cits6f]
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000126: Indexes: [fk_gicmr6ft2omm5nl94e2cits6f, primary]
+15:57:13.927 983  [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000232: Schema update complete

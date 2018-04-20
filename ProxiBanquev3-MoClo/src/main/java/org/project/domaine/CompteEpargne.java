@@ -3,6 +3,15 @@ package org.project.domaine;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * @author Clothilde et Morane
+ *
+ */
+
+/**
+ * Class CompteEpargne qui hérite de la Classe Compte
+ *
+ */
 @XmlRootElement
 @Entity
 public class CompteEpargne extends Compte {

@@ -1,15 +1,10 @@
 package org.project.domaine;
 
-import javax.persistence.CascadeType;
-
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -29,10 +24,6 @@ public class Client {
 	private Adresse adresse;
 	private String telephone;
 	private String email;
-
-	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	@JoinColumn(name = "idConseiller", unique = true)
-	private Conseiller conseiller;
 
 	public Client() {
 
@@ -77,14 +68,6 @@ public class Client {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public Conseiller getConseiller() {
-		return conseiller;
-	}
-
-	public void setConseiller(Conseiller conseiller) {
-		this.conseiller = conseiller;
 	}
 
 	public String getNom() {

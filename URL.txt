@@ -1,11 +1,25 @@
 -------------------------------------------------------------------------------------------------------------
-													CLIENTS
+CLIENTS
 -------------------------------------------------------------------------------------------------------------
 Method : POST
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/
 Flux :
 {
       "nom": "String",
+    "prenom": "String",
+    "adresse": {
+        "rue": "String",
+        "codePostal": int,
+        "ville": "String"
+    },
+    "telephone": "String",
+    "email": "String"
+}
+Code retour : 200
+Flux retour :
+{
+    "idClient": {idClient},
+    "nom": "String",
     "prenom": "String",
     "adresse": {
         "rue": "String",
@@ -31,18 +45,72 @@ Flux :
     "telephone": "String",
     "email": "String"
 }
+Code retour : 200
+Flux retour : Client modifié
 
+*******Client n'ayant pas de compte*******
 Method : DELETE
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}
+Code retour : 200
+Flux retour : Client supprimé
+
+*******Client ayant des comptes*******
+Method : DELETE
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}
+Code retour : 500
 
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}
-
+Code retour : 200
+Flux retour :
+{
+    "idClient": {idClient},
+    "nom": "String",
+    "prenom": "String",
+    "adresse": {
+        "rue": "String",
+        "codePostal": int,
+        "ville": "String"
+    },
+    "telephone": "String",
+    "email": "String"
+}
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients
+Code retour : 200
+Flux retour :
+[
+  {
+    "idClient": {idClient},
+    "nom": "String",
+    "prenom": "String",
+    "adresse": {
+        "rue": "String",
+        "codePostal": int,
+        "ville": "String"
+    },
+    "telephone": "String",
+    "email": "String"
+},
+    .
+	.
+	.,
+  {
+    "idClient": {idClient},
+    "nom": "String",
+    "prenom": "String",
+    "adresse": {
+        "rue": "String",
+        "codePostal": int,
+        "ville": "String"
+    },
+    "telephone": "String",
+    "email": "String"
+}
+]
 
 -------------------------------------------------------------------------------------------------------------
-												COMPTES COURANTS
+COMPTES COURANTS
 -------------------------------------------------------------------------------------------------------------
 Method : POST
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/
@@ -52,6 +120,27 @@ Flux :
         "decouvertAutorise": double,
         "carteVisa": "CartePremier"/"CarteElectron"
     }
+Code retour : 200
+Flux retour :
+{
+    "numCompte": 0,
+    "solde": double,
+    "client": {
+        "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+    },
+    "dateOuverture": 1524233428464,
+    "decouvertAutorise": int,
+    "carteVisa": "CartePremier"/"CarteElectron"
+}
 		
 Method : PUT
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/
@@ -63,24 +152,133 @@ Flux :
     "decouvertAutorise": double,
     "carteVisa": "CartePremier"/"CarteElectron"
 }
+Code retour : 200
+Flux retour :
+{
+    "numCompte": {numCompte},
+    "solde": double,
+	"client": {
+     "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+    },
+    "dateOuverture": 1524233557857,
+    "decouvertAutorise": int,
+    "carteVisa": "CartePremier"/"CarteElectron"
+}
 	
 Method : DELETE
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/{numCompte}
+Code retour : 200
+Flux retour : Compte courant supprimé
 
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/{numCompte}
+Code retour : 200
+Flux retour :
+{
+    "numCompte": {numCompte},
+    "solde": double,
+	"client": {
+     "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+    },
+    "dateOuverture": 1524233557857,
+    "decouvertAutorise": int,
+    "carteVisa": "CartePremier"/"CarteElectron"
+}
 
 Method : GET
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_courants/
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/comptes/comptes_courants/
+Code retour : 200
+Flux retour :
+[
+    {
+        "numCompte": {numCompte},
+        "solde": double,
+        "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524233557857,
+    "decouvertAutorise": int,
+    "carteVisa": "CartePremier"/"CarteElectron"
+    },
+	.
+	.
+	.,
+    {
+        "numCompte": {numCompte},
+        "solde": double,
+        "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524233557857,
+    "decouvertAutorise": int,
+    "carteVisa": "CartePremier"/"CarteElectron"
+    }
+]
 
 -------------------------------------------------------------------------------------------------------------
-												COMPTES EPARGNES
+COMPTES EPARGNES
 -------------------------------------------------------------------------------------------------------------
 Method : POST
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/
 Flux : 
 {
     "solde": double,
+    "tauxRemuneration": double
+}
+Code retour : 200
+Flux retour :
+{
+    "numCompte": 0,
+    "solde": double,
+    "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524234384492,
     "tauxRemuneration": double
 }
 Method : PUT
@@ -92,18 +290,167 @@ Flux :
     "dateOuverture": 1524222198000,
     "tauxRemuneration": double
 }
+Code retour : 200
+Flux retour : Compte épargne modifié
 
 Method : DELETE
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/{numCompte}
+Code retour : 200
+Flux retour : Compte épargne supprimé
 
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/{numCompte}
-
+Code retour : 200
+Flux retour :
+{
+    "numCompte": {numCompte},
+    "solde": double,
+    "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524234384492,
+    "tauxRemuneration": double
+}
 Method : GET
-URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/comptes_epargnes/
-
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/comptes/comptes_epargnes/
+Code retour : 200
+Flux retour :
+[
+{
+    "numCompte": {numCompte},
+    "solde": double,
+    "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524234384492,
+    "tauxRemuneration": double
+},
+.
+.
+.,
+{
+    "numCompte": {numCompte},
+    "solde": double,
+    "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524234384492,
+    "tauxRemuneration": double
+}
+]
 -------------------------------------------------------------------------------------------------------------
-											TOUS LES COMPTES D'UN CLIENT
+TOUS LES COMPTES
 -------------------------------------------------------------------------------------------------------------
 Method : GET
-http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/{idClient}/comptes/
+Code retour : 200
+Flux retour :
+[
+    {
+        "numCompte": {numCompte},
+        "solde": double,
+        "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524233557857,
+    "decouvertAutorise": int,
+    "carteVisa": "CartePremier"/"CarteElectron"
+    },
+	.
+	.
+	.,
+    {
+        "numCompte": {numCompte},
+        "solde": double,
+        "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524233557857,
+    "decouvertAutorise": int,
+    "carteVisa": "CartePremier"/"CarteElectron"
+    },
+	{
+    "numCompte": {numCompte},
+    "solde": double,
+    "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524234384492,
+    "tauxRemuneration": double
+},
+.
+.
+.,
+{
+    "numCompte": {numCompte},
+    "solde": double,
+    "client": {
+      "idClient": {idClient},
+        "nom": "String",
+        "prenom": "String",
+        "adresse": {
+            "rue": "String",
+            "codePostal": int,
+            "ville": "String"
+        },
+        "telephone": "String",
+        "email": "String"
+        },
+    "dateOuverture": 1524234384492,
+    "tauxRemuneration": double
+}
+]
