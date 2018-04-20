@@ -16,10 +16,22 @@ import org.project.domaine.Compte;
 import org.project.domaine.CompteCourant;
 import org.project.domaine.CompteEpargne;
 
+/**
+ * @author Morane & Clothilde
+ *
+ */
+
+/**
+ * Interface de gestion des clients et de leur comptes
+ * 
+ */
 @Produces({ "application/xml", "application/json" })
 public interface GestionClient {
 
-	// Méthodes de gestion des clients
+	/**
+	 * Méthodes de gestion d'un client
+	 * 
+	 */
 	@Path("/clients/")
 	@POST
 	public Response createClient(Client client);
@@ -40,7 +52,10 @@ public interface GestionClient {
 	@GET
 	public List<Client> readAllClient();
 
-	// Méthodes de gestion des comptes courants
+	/**
+	 * Méthodes de gestion des comptes courants
+	 * 
+	 */
 	@Path("/clients/{idclient}/comptes/comptes_courants/")
 	@POST
 	public Response createCompteCourant(CompteCourant compteC, @PathParam("idclient") String idClient);
@@ -61,7 +76,10 @@ public interface GestionClient {
 	@GET
 	public List<CompteCourant> readAllCompteCourant();
 
-	// Méthodes de gestion des comptes epargnes
+	/**
+	 * Méthodes de gestion des comptes épargnes
+	 * 
+	 */
 	@Path("/clients/{idclient}/comptes/comptes_epargnes/")
 	@POST
 	public Response createCompteEpargne(CompteEpargne compteE, @PathParam("idclient") String idClient);
@@ -82,7 +100,10 @@ public interface GestionClient {
 	@GET
 	public List<CompteEpargne> readAllCompteEpargne();
 
-	// Méthode de lecture de tous les comptes confondus d'un client
+	/**
+	 * Méthodes d'affichage de tous les comptes
+	 * 
+	 */
 	@Path("/clients/{idclient}/comptes/")
 	@GET
 	public List<Compte> readAllCompte(@PathParam("idclient") String idClient);

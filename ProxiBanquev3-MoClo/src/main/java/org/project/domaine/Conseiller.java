@@ -3,22 +3,30 @@ package org.project.domaine;
 import java.util.List;
 
 //import javax.persistence.CascadeType;
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 //import javax.persistence.JoinColumn;
 //import javax.persistence.ManyToOne;
-//import javax.persistence.OneToMany;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * @author Morane & Clothilde
+ *
+ */
 
+/**
+ * Classe du conseiller ; Prête pour les prochaines itérations du projet
+ *
+ */
 @XmlRootElement
-//@Entity
+@Entity
 public class Conseiller {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idConseiller;
 
 	private String nom;
@@ -27,12 +35,8 @@ public class Conseiller {
 	private String password;
 	private String login;
 
-//	@OneToMany(mappedBy = "idClient")
+	@OneToMany(mappedBy = "conseiller")
 	private List<Client> clients;
-
-//	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-//	@JoinColumn(name = "idAgence", unique = true)
-//	private Agence agence;
 
 	public Conseiller(int idConseiller, List<Client> clients) {
 		this.idConseiller = idConseiller;
@@ -81,14 +85,6 @@ public class Conseiller {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-//
-//	public Agence getAgence() {
-//		return agence;
-//	}
-//
-//	public void setAgence(Agence agence) {
-//		this.agence = agence;
-//	}
 
 	public String getPassword() {
 		return password;
@@ -106,4 +102,8 @@ public class Conseiller {
 		this.login = login;
 	}
 
+	public void addClient(Client client) {
+		clients.add(client);
+		client.setConseiller(this);
+	}
 }

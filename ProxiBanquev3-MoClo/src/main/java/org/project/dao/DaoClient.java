@@ -16,6 +16,7 @@ public class DaoClient implements IDao<Client> {
 	public int create(Client element) {
 		EntityManager em = JPAUtil.EMF.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
+
 		try {
 			txn.begin();
 

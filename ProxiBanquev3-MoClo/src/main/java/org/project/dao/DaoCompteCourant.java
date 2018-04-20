@@ -9,6 +9,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
+import org.formation.hibernate.model.Movie;
+import org.project.domaine.Client;
 import org.project.domaine.CompteCourant;
 import org.project.util.JPAUtil;
 import org.slf4j.Logger;
@@ -119,8 +121,22 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		List<CompteCourant> compteCourants = new ArrayList<>();
 		try {
 			txn.begin();
-			TypedQuery<CompteCourant> queryCompteCourant = em.createQuery("from CompteCourant", CompteCourant.class);
-			compteCourants = queryCompteCourant.getResultList();
+			// TypedQuery<CompteCourant> queryCompteCourant = em.createQuery("from
+			// CompteCourant", CompteCourant.class);
+			// compteCourants = queryCompteCourant.getResultList();
+
+			TypedQuery<Movie> tq = em.createQuery("select m from Movie m Join fetch m.actors a where m.idMovie= :id",
+					Movie.class);
+			tq.setParameter("id", 4);
+
+			Movie m = tq.getSingleResult();
+
+			TypedQuery<CompteCourant> queryCompteCourant = em.createQuery(
+					"select cc from CompteCourant cc Join fetch cc.client c where cc.numCompte= :id",
+					CompteCourant.class);
+			queryCompteCourant.setParameter("id", 4);
+
+			compteCourants = tq.getResultList();
 
 			txn.commit();
 		} catch (Exception e) {
