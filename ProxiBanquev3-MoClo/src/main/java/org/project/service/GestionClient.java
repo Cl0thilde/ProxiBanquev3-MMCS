@@ -34,7 +34,7 @@ public interface GestionClient {
 
 	@Path("/clients/{idclient}")
 	@GET
-	public Client readClientById(@PathParam("idclient")String idClient);
+	public Client readClientById(@PathParam("idclient") String idClient);
 
 	@Path("/clients/")
 	@GET
@@ -43,11 +43,11 @@ public interface GestionClient {
 	// Méthodes de gestion des comptes courants
 	@Path("/clients/{idclient}/comptes/comptes_courants/")
 	@POST
-	public Response createCompteCourant(CompteCourant compteC,@PathParam("idclient") String idClient);
+	public Response createCompteCourant(CompteCourant compteC, @PathParam("idclient") String idClient);
 
 	@Path("/clients/{idclient}/comptes/comptes_courants/")
 	@PUT
-	public Response updateCompteCourant(CompteCourant compteC,@PathParam("idclient") String idClient);
+	public Response updateCompteCourant(CompteCourant compteC, @PathParam("idclient") String idClient);
 
 	@Path("/clients/{idclient}/comptes/comptes_courants/{numcompte}/")
 	@DELETE
@@ -64,19 +64,19 @@ public interface GestionClient {
 	// Méthodes de gestion des comptes epargnes
 	@Path("/clients/{idclient}/comptes/comptes_epargnes/")
 	@POST
-	public Response createCompteEpargne(CompteEpargne compteE,@PathParam("idclient") String idClient);
+	public Response createCompteEpargne(CompteEpargne compteE, @PathParam("idclient") String idClient);
 
 	@Path("/clients/{idclient}/comptes/comptes_epargnes/")
 	@PUT
-	public Response updateCompteEpargne(CompteEpargne compteE);
+	public Response updateCompteEpargne(CompteEpargne compteE, @PathParam("idclient") String idClient);
 
 	@Path("/clients/{idclient}/comptes/comptes_epargnes/{numcompte}/")
 	@DELETE
-	public Response deleteCompteEpargne(String numCompte);
+	public Response deleteCompteEpargne(@PathParam("numcompte") String numCompte);
 
 	@Path("/clients/{idclient}/comptes/comptes_epargnes/{numcompte}/")
 	@GET
-	public CompteEpargne readCompteEpargneByNum(String numCompte);
+	public CompteEpargne readCompteEpargneByNum(@PathParam("numcompte") String numCompte);
 
 	@Path("/clients/{idclient}/comptes/comptes_epargnes/")
 	@GET
@@ -85,6 +85,6 @@ public interface GestionClient {
 	// Méthode de lecture de tous les comptes confondus d'un client
 	@Path("/clients/{idclient}/comptes/")
 	@GET
-	public List<Compte> readAllCompte();
+	public List<Compte> readAllCompte(@PathParam("idclient") String idClient);
 
 }

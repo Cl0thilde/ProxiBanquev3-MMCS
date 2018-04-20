@@ -1,6 +1,12 @@
 package org.project.domaine;
 
+
 import javax.persistence.CascadeType;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 //import javax.persistence.OneToOne;
 import javax.persistence.Embedded;
@@ -8,8 +14,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -29,6 +37,7 @@ public class Client {
 	private String telephone;
 	private String email;
 	
+
 	 @ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	 @JoinColumn(name = "idConseiller", unique = true)
 	 private Conseiller conseiller;
@@ -134,6 +143,7 @@ public class Client {
 				+ ", telephone=" + telephone + ", email=" + email + "]";
 	}
 
+	
 //	 public CompteCourant getCompteCourant() {
 //	 return compteCourant;
 //	 }

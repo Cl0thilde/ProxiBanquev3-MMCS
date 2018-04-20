@@ -33,6 +33,7 @@ public class GestionClientImpl implements GestionClient {
 	public Response updateClient(Client updatedClient) {
 		Response response = null;
 		Client client = daoClient.readById(updatedClient.getIdClient());
+
 		if (client != null) {
 			daoClient.update(updatedClient);
 			response = Response.ok("Client modifié").build();
@@ -47,6 +48,7 @@ public class GestionClientImpl implements GestionClient {
 		Response response = null;
 		int id = Integer.parseInt(idClient);
 		Client client = daoClient.readById(id);
+
 		if (client != null) {
 			daoClient.delete(client);
 			response = Response.ok("Client supprimé").build();
@@ -123,17 +125,20 @@ public class GestionClientImpl implements GestionClient {
 	public Response createCompteEpargne(CompteEpargne compteE, String idClient) {
 		int id = Integer.parseInt(idClient);
 		Client client = daoClient.readById(id);
-		// compteE.setClient(client);
+		compteE.setClient(client);
 		daoCompteEpargne.create(compteE);
 		return Response.ok(compteE).build();
 	}
 
 	@Override
-	public Response updateCompteEpargne(CompteEpargne updatedCompteE) {
+	public Response updateCompteEpargne(CompteEpargne updatedCompteE, String idClient) {
 		Response response = null;
+		int id = Integer.parseInt(idClient);
+		Client client = daoClient.readById(id);
 		CompteEpargne compteEpargne = daoCompteEpargne.readById(updatedCompteE.getNumCompte());
 		if (compteEpargne != null) {
-			daoCompteEpargne.update(compteEpargne);
+			updatedCompteE.setClient(client);
+			daoCompteEpargne.update(updatedCompteE);
 			response = Response.ok("Compte épargne modifié").build();
 		} else {
 			response = Response.notModified().build();
@@ -145,9 +150,9 @@ public class GestionClientImpl implements GestionClient {
 	public Response deleteCompteEpargne(String numCompte) {
 		Response response = null;
 		int id = Integer.parseInt(numCompte);
-		CompteEpargne compteCourant = daoCompteEpargne.readById(id);
-		if (compteCourant != null) {
-			daoCompteEpargne.delete(compteCourant);
+		CompteEpargne compteEpargne = daoCompteEpargne.readById(id);
+		if (compteEpargne != null) {
+			daoCompteEpargne.delete(compteEpargne);
 			response = Response.ok("Compte épargne supprimé").build();
 		} else {
 			response = Response.notModified().build();
@@ -167,12 +172,16 @@ public class GestionClientImpl implements GestionClient {
 	}
 
 	@Override
-	public List<Compte> readAllCompte() {
+	public List<Compte> readAllCompte(String idClient) {
+		int id = Integer.parseInt(idClient);
+		Client client = daoClient.readById(id);
+		
 		List<Compte> comptes = new ArrayList<>();
 		List<CompteCourant> comptesCourant = daoCompteCourant.readAll();
 		List<CompteEpargne> comptesEpargne = daoCompteEpargne.readAll();
 		comptes.addAll(comptesCourant);
 		comptes.addAll(comptesEpargne);
+		
 		return comptes;
 	}
 

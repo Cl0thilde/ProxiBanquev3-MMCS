@@ -24,7 +24,7 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 			DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
 			shortDateFormat.format(dateOuverture);
 			element.setDateOuverture(dateOuverture);
-			em.persist(element);
+			em.merge(element);
 
 			txn.commit();
 		} catch (Exception e) {
@@ -45,10 +45,7 @@ public class DaoCompteEpargne implements IDao<CompteEpargne> {
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
-			CompteEpargne compteEpargne = em.find(CompteEpargne.class, element.getNumCompte());
-			compteEpargne.setSolde(element.getSolde());
-			compteEpargne.setTauxRemuneration(element.getTauxRemuneration());
-			em.merge(compteEpargne);
+			em.merge(element);
 
 			txn.commit();
 		} catch (Exception e) {

@@ -18,6 +18,11 @@ public class CompteEpargne extends Compte {
 
 	}
 
+	public CompteEpargne(double solde, double tauxRemuneration) {
+		super(solde);
+		this.tauxRemuneration = tauxRemuneration;
+	}
+
 	public double getTauxRemuneration() {
 		return tauxRemuneration;
 	}
