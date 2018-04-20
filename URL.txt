@@ -1,3 +1,6 @@
+-------------------------------------------------------------------------------------------------------------
+													CLIENTS
+-------------------------------------------------------------------------------------------------------------
 Method : POST
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/
 Flux :
@@ -37,13 +40,51 @@ URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1
 
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients
----------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+													COMPTES
+-------------------------------------------------------------------------------------------------------------
 Method : GET
 http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/
----------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+												COMPTES COURANTS
+-------------------------------------------------------------------------------------------------------------
+Method : POST
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/
+Flux :
+   {
+        "solde": double,
+        "decouvertAutorise": double,
+        "carteVisa": "cartePremier"/"carteElectron"
+    }
+		
+Method : PUT
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/
+Flux : 
+{
+    "numCompte": 21,
+    "solde": 100,
+    "dateOuverture": 1524216393000,
+    "decouvertAutorise": 2503,
+    "carteVisa": "CartePremier"
+}
+	
+Method : DELETE
+URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/1
 
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_courants/
+
+-------------------------------------------------------------------------------------------------------------
+												COMPTES EPARGNES
+-------------------------------------------------------------------------------------------------------------
+Method : POST
+URL : 
+
+Method : PUT
+URL : 
+
+Method : DELETE
+URL : 
 
 Method : GET
 URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1/comptes/comptes_epargnes/
@@ -52,25 +93,7 @@ URL : http://localhost:8080/ProxiBanquev3-MoClo/services/gestionclient/clients/1
 
 
 
-   {
-        "numCompte": 1,
-        "solde": 0,
-        "client": {
-            "idClient": 1,
-            "nom": "Doe",
-            "prenom": "John",
-            "adresse": {
-                "rue": "rue inconnue",
-                "codePostal": 75000,
-                "ville": "Paris"
-            },
-            "telephone": "1234567890",
-            "email": "email"
-        },
-        "dateOuverture": null,
-        "decouvertAutorise": 0.1,
-        "carteVisa": "carteVisa"
-    }
+
 
 	
 	    {

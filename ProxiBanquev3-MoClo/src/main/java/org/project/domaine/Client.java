@@ -1,13 +1,13 @@
 package org.project.domaine;
 
-import javax.persistence.CascadeType;
+//import javax.persistence.CascadeType;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.OneToOne;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -31,11 +31,11 @@ public class Client {
 	// @JoinColumn(name = "idConseiller", unique = true)
 	// private Conseiller conseiller;
 
-	// @OneToOne(mappedBy = "client", cascade = { CascadeType.PERSIST,
-	// CascadeType.REMOVE })
-	// @OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	// @JoinColumn(name = "numCompte")
-	// private CompteCourant compteCourant;
+	// @OneToOne(mappedBy = "client", cascade = { CascadeType.ALL })
+	//// @OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	//// @JoinColumn(name = "numCompte")
+//	@OneToOne(mappedBy = "client", cascade = { CascadeType.ALL })
+//	private CompteCourant compteCourant;
 
 	// @OneToOne(mappedBy = "client", cascade = { CascadeType.PERSIST,
 	// CascadeType.REMOVE })
@@ -126,14 +126,20 @@ public class Client {
 		this.prenom = prenom;
 	}
 
-	// public CompteCourant getCompteCourant() {
-	// return compteCourant;
-	// }
-	//
-	// public void setCompteCourant(CompteCourant compteCourant) {
-	// this.compteCourant = compteCourant;
-	// }
-	//
+	@Override
+	public String toString() {
+		return "Client [idClient=" + idClient + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse
+				+ ", telephone=" + telephone + ", email=" + email + "]";
+	}
+
+//	 public CompteCourant getCompteCourant() {
+//	 return compteCourant;
+//	 }
+//	
+//	 public void setCompteCourant(CompteCourant compteCourant) {
+//	 this.compteCourant = compteCourant;
+//	 }
+
 	// public CompteEpargne getCompteEpargne() {
 	// return compteEpargne;
 	// }

@@ -11,8 +11,12 @@ import javax.persistence.TypedQuery;
 
 import org.project.domaine.CompteCourant;
 import org.project.util.JPAUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DaoCompteCourant implements IDao<CompteCourant> {
+
+	private static Logger LOGGER = LoggerFactory.getLogger(DaoCompteCourant.class);
 
 	@Override
 	public void create(CompteCourant element) {
@@ -24,9 +28,8 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 			DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
 			shortDateFormat.format(dateOuverture);
 			element.setDateOuverture(dateOuverture);
-			
-			em.persist(element);
-
+			LOGGER.debug("Compte courant à créer : ", element);
+			em.merge(element);
 			txn.commit();
 		} catch (Exception e) {
 			if (txn != null)
@@ -46,10 +49,8 @@ public class DaoCompteCourant implements IDao<CompteCourant> {
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
-			CompteCourant compteCourant = em.find(CompteCourant.class, element.getNumCompte());
-			compteCourant.setSolde(element.getSolde());
-			compteCourant.setDecouvertAutorise(element.getDecouvertAutorise());
-			em.merge(compteCourant);
+
+			em.merge(element);
 
 			txn.commit();
 		} catch (Exception e) {

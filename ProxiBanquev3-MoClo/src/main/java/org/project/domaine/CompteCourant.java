@@ -13,6 +13,12 @@ public class CompteCourant extends Compte {
 	public CompteCourant() {
 	}
 
+	public CompteCourant(double solde, double decouvertAutorise, String carteVisa) {
+		super(solde);
+		this.decouvertAutorise = decouvertAutorise;
+		this.carteVisa = carteVisa;
+	}
+
 	public CompteCourant(double decouvertAutorise, String carteVisa) {
 		this.decouvertAutorise = decouvertAutorise;
 		this.carteVisa = carteVisa;
@@ -32,6 +38,11 @@ public class CompteCourant extends Compte {
 
 	public void setCarteVisa(String carteVisa) {
 		this.carteVisa = carteVisa;
+	}
+
+	@Override
+	public String toString() {
+		return "CompteCourant [decouvertAutorise=" + decouvertAutorise + ", carteVisa=" + carteVisa + "]";
 	}
 
 }

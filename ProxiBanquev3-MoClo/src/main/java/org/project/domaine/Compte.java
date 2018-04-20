@@ -22,16 +22,20 @@ public abstract class Compte {
 
 	private double solde;
 
-	 @OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	 @JoinColumn(name = "idClient")
-	
-	 private Client client;
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@JoinColumn(name = "idClient")
+	private Client client;
 
 	private Date dateOuverture;
 
 	public Compte(double solde, Date dateOuverture) {
 		this.solde = solde;
 		this.dateOuverture = dateOuverture;
+	}
+
+	public Compte(double solde) {
+		super();
+		this.solde = solde;
 	}
 
 	public Compte() {
@@ -60,13 +64,18 @@ public abstract class Compte {
 	public void setDateOuverture(Date dateOuverture) {
 		this.dateOuverture = dateOuverture;
 	}
-	
-	 public Client getClient() {
-	 return client;
-	 }
-	
-	 public void setClient(Client client) {
-	 this.client = client;
-	 }
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	@Override
+	public String toString() {
+		return "Compte [numCompte=" + numCompte + ", solde=" + solde + ", dateOuverture=" + dateOuverture + "]";
+	}
 
 }

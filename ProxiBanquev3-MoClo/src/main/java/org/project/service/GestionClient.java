@@ -47,7 +47,7 @@ public interface GestionClient {
 
 	@Path("/clients/{idclient}/comptes/comptes_courants/")
 	@PUT
-	public Response updateCompteCourant(CompteCourant compteC);
+	public Response updateCompteCourant(CompteCourant compteC,@PathParam("idclient") String idClient);
 
 	@Path("/clients/{idclient}/comptes/comptes_courants/{numcompte}/")
 	@DELETE

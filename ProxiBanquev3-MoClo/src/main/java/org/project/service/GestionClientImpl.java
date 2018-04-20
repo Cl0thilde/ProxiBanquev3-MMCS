@@ -3,7 +3,6 @@ package org.project.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
 import org.project.dao.DaoClient;
@@ -14,11 +13,15 @@ import org.project.domaine.Client;
 import org.project.domaine.Compte;
 import org.project.domaine.CompteCourant;
 import org.project.domaine.CompteEpargne;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GestionClientImpl implements GestionClient {
 	IDao<Client> daoClient = new DaoClient();
 	IDao<CompteCourant> daoCompteCourant = new DaoCompteCourant();
 	IDao<CompteEpargne> daoCompteEpargne = new DaoCompteEpargne();
+
+	private static Logger LOGGER = LoggerFactory.getLogger(GestionClientImpl.class);
 
 	@Override
 	public Response createClient(Client client) {
@@ -70,15 +73,20 @@ public class GestionClientImpl implements GestionClient {
 		Client client = daoClient.readById(id);
 		compteC.setClient(client);
 		daoCompteCourant.create(compteC);
+		LOGGER.debug(compteC.toString());
+		LOGGER.debug(client.toString());
 		return Response.ok(compteC).build();
 	}
 
 	@Override
-	public Response updateCompteCourant(CompteCourant updatedCompteC) {
+	public Response updateCompteCourant(CompteCourant updatedCompteC, String idClient) {
 		Response response = null;
+		int id = Integer.parseInt(idClient);
+		Client client = daoClient.readById(id);
 		CompteCourant compteCourant = daoCompteCourant.readById(updatedCompteC.getNumCompte());
 		if (compteCourant != null) {
-			daoCompteCourant.update(compteCourant);
+			updatedCompteC.setClient(client);
+			daoCompteCourant.update(updatedCompteC);
 			response = Response.ok("Compte courant modifié").build();
 		} else {
 			response = Response.notModified().build();
@@ -115,7 +123,7 @@ public class GestionClientImpl implements GestionClient {
 	public Response createCompteEpargne(CompteEpargne compteE, String idClient) {
 		int id = Integer.parseInt(idClient);
 		Client client = daoClient.readById(id);
-		compteE.setClient(client);
+		// compteE.setClient(client);
 		daoCompteEpargne.create(compteE);
 		return Response.ok(compteE).build();
 	}

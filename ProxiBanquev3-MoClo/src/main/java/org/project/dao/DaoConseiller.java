@@ -7,13 +7,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import org.project.domaine.Client;
-import org.project.domaine.Conseiller;
-import org.project.domaine.Conseiller;
 import org.project.domaine.Conseiller;
 import org.project.util.JPAUtil;
 
-public class DaoConseiller implements IDao<Conseiller>{
+public class DaoConseiller implements IDao<Conseiller> {
 
 	@Override
 	public void create(Conseiller element) {
@@ -21,7 +18,7 @@ public class DaoConseiller implements IDao<Conseiller>{
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
-			
+
 			em.persist(element);
 
 			txn.commit();
@@ -34,13 +31,13 @@ public class DaoConseiller implements IDao<Conseiller>{
 				em.close();
 
 		}
-		
+
 	}
 
 	@Override
 	public void update(Conseiller element) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -63,7 +60,7 @@ public class DaoConseiller implements IDao<Conseiller>{
 				em.close();
 
 		}
-		
+
 	}
 
 	@Override
@@ -86,7 +83,7 @@ public class DaoConseiller implements IDao<Conseiller>{
 				em.close();
 
 		}
-		
+
 		return conseiller;
 	}
 
@@ -110,9 +107,8 @@ public class DaoConseiller implements IDao<Conseiller>{
 				em.close();
 
 		}
-		
+
 		return conseillers;
 
 	}
-	}
-
+}
